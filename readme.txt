@@ -4,7 +4,7 @@ Donate link: http://www.cromorama.com/blog/crm-lastposts-widget/
 Tags: widget, last, posts, ultimos, posts, image, imagen, effect
 Requires at least: 3.8
 Tested up to: 3.8
-Stable tag: 1.2.3
+Stable tag: 1.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,4 +42,6 @@ El widget está disponible desde el repositorio de WordPress así como para desc
 * Correción en la forma de llamar el archivo CSS del Widget.
 * Adaptación de los textos del widget al inglés.
 
-`<?php code(); // goes in backticks ?>`
+= 1.2.4 =
+
+* Nuevo CSS
