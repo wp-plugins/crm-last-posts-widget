@@ -4,7 +4,7 @@
 Plugin Name: CRM LastPosts Widget
 Plugin URI: http://www.cromorama.com/blog/crm-lastposts-widget
 Description: Muestra los últimos posts de una categoría concreta de manera visual.
-Version: 1.2.5
+Version: 1.2.6
 Author: Cromorama.com
 Author URI: http://www.cromorama.com
 */
@@ -12,12 +12,9 @@ Author URI: http://www.cromorama.com
 
 //Registramos el archivo CSS del Plugin
 function crm_css() {
+	wp_register_style('crmStyle', plugins_url( 'css/crm-lastposts.css' , __FILE__ ) );
+	wp_enqueue_style( 'crmStyle');
 
-  $pluginURL = WP_PLUGIN_URL."/crm-lastposts/";
-  
-  wp_register_style('crmStyle', $pluginURL.'css/crm-lastposts.css');
-  wp_enqueue_style( 'crmStyle');
-  
 }
 add_action('wp_enqueue_scripts', 'crm_css');
 
