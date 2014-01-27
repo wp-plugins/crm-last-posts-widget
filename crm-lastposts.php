@@ -3,8 +3,8 @@
 /*
 Plugin Name: CRM LastPosts Widget
 Plugin URI: http://www.cromorama.com/blog/crm-lastposts-widget
-Description: Muestra los últimos posts de una categoría concreta de manera visual.
-Version: 1.2.6
+Description: Show the last posts in a visual way. Muestra los últimos posts de una categoría concreta de manera visual.
+Version: 1.2.7
 Author: Cromorama.com
 Author URI: http://www.cromorama.com
 */
@@ -14,7 +14,6 @@ Author URI: http://www.cromorama.com
 function crm_css() {
 	wp_register_style('crmStyle', plugins_url( 'css/crm-lastposts.css' , __FILE__ ) );
 	wp_enqueue_style( 'crmStyle');
-
 }
 add_action('wp_enqueue_scripts', 'crm_css');
 
@@ -41,7 +40,7 @@ class crm_lastposts extends WP_Widget {
 		$crm_thumb = $instance['crm_thumb'];
 		$crm_title_class = $instance['crm_title_class'];
 		$crm_date_class = $instance['crm_date_class'];
-
+		
 		echo $args['before_widget'];
 		
 			if (!empty($title))
@@ -131,7 +130,7 @@ class crm_lastposts extends WP_Widget {
 		if (isset($instance['crm_category'])) {
 			$crm_category = $instance['crm_category'];
 		}else{
-			$crm_category = __( 'Sin categoría', 'wpb_widget_domain' );
+			$crm_category = __( 'All', 'wpb_widget_domain' );
 		}
 		
 		if (isset($instance['crm_thumb'])) {
@@ -173,8 +172,11 @@ class crm_lastposts extends WP_Widget {
 			<input class="widefat" id="<?php echo $this->get_field_id( 'num_posts' ); ?>" name="<?php echo $this->get_field_name( 'num_posts' ); ?>" type="text" value="<?php echo esc_attr( $num_posts ); ?>" />
 			</p>
             <p>
-            <label for="<?php echo $this->get_field_id( 'crm_category' ); ?>"><?php _e( 'Category:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'crm_category' ); ?>"><?php _e( 'Category to show:' ); ?></label> 
             <select class="widefat" id="<?php echo $this->get_field_id( 'crm_category' ); ?>" name="<?php echo $this->get_field_name( 'crm_category' ); ?>">
+            
+            <option value="All" <?php if($crm_category == "All"){ echo "SELECTED"; } ?> > All Categories </option>
+            
 <?php  
 			foreach($categories as $all_category) { 
 ?>
