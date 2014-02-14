@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=info%
 Tags: widget, last, posts, ultimos, posts, image, imagen, effect
 Requires at least: 3.8
 Tested up to: 3.8
-Stable tag: 1.2.7
+Stable tag: 1.2.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,17 +31,19 @@ El widget está disponible desde el repositorio de WordPress así como para desc
 2. Activate widget from plugins page.
 3. Configurate your widget and enjoy it!.
 
-1. Sube la carpeta crm-lastposts a la carpeta Plugins de tu WordPress
-2. Activa el widget desde el menú de administración de Plugins
-3. Ve a Apariencia -> Widgets, configura el mismo a tu gusto y disfrutalo.
-
 == Screenshots ==
 
 1. Administration panel of the widget. Panel de administración del widget.
 2. Image of the widget running. Imagen del widget funcionando.
 
-
 == Changelog ==
+
+= 1.2.8 =
+
+* Changed some screenshots
+* CSS problem fixed
+* Cambiados algunos screenshots
+* Problema con el CSS solucionado
 
 = 1.2.7 =
 
