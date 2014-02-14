@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=info%
 Tags: widget, last, posts, ultimos, posts, image, imagen, effect
 Requires at least: 3.8
 Tested up to: 3.8
-Stable tag: 1.2.8
+Stable tag: 1.2.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,6 +37,11 @@ El widget está disponible desde el repositorio de WordPress así como para desc
 2. Image of the widget running. Imagen del widget funcionando.
 
 == Changelog ==
+
+= 1.2.9 =
+
+* Fixed Critical Faliure
+* Arreglado Error Crítico
 
 = 1.2.8 =
 
