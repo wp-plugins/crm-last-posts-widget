@@ -1,0 +1,62 @@
+/* Estilos Cromorama LastPosts */
+
+/* VARIUS */
+
+.postContainer{
+	position:relative;
+}
+
+.mask{
+	margin-top:10px;
+}
+
+/* IMAGES */
+
+.postContainer img {
+	opacity:1;
+	transition:opacity 0.2s ;
+	border:1px solid #999;
+}
+
+.postContainer:hover img{
+	opacity:0.3;
+	filter:alpha(opacity=40); /* For IE8 and earlier */
+	transition:opacity 0.2s ;
+	border:1px solid #999;
+}
+
+/* TEXTS */
+
+.defaultTitle{
+	color:#2B3D4F;
+	font-weight:bold;
+}
+
+.defaultDate{
+	color:#666;
+}
+
+.text {
+	visibility:hidden;
+	position:absolute;
+	text-align:center;
+}
+
+.nuevoClass {
+	
+	font-size: 1.3vw;
+	font-size: 1vmax;
+	line-height: 1em;
+	visibility: visible;
+	text-align: center;
+	width: 100%;
+	
+	margin: 0;
+    padding: 0;
+		
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
