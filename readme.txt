@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=info%
 Tags: widget, last, posts, most, popular, random, últimos, posts, populares, aleatorios, image, imagen, mouseover, effect
 Requires at least: 3.8
 Tested up to: 3.8
-Stable tag: 1.3.0
+Stable tag: 1.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,6 +37,11 @@ Mas información en: http://www.cromorama.com/blog/crm-lastposts-widget/. Iremos
 2. Image of the widget running. Imagen del widget funcionando.
 
 == Changelog ==
+
+= 1.3.1 =
+
+* Added shorts ASC (down to up) and DESC (up to down) to order your posts in the way you like.
+* Añadida la posibiliad de ordenar los posts de forma ascendente o descendente.
 
 = 1.3.0 =
 

@@ -4,7 +4,7 @@
 Plugin Name: CRM LastPosts Widget
 Plugin URI: http://www.cromorama.com/blog/crm-lastposts-widget
 Description: Show the last, most popular or random posts in a visual way. Muestra los últimos posts, los mas populares o de forma aleatoria de manera visual.
-Version: 1.3.0
+Version: 1.3.1
 Author: Cromorama.com
 Author URI: http://www.cromorama.com
 */
@@ -38,6 +38,7 @@ class crm_lastposts extends WP_Widget {
 		$num_posts = $instance['num_posts'];
 		$crm_category = $instance['crm_category'];
 		$crm_order = $instance['crm_order'];
+		$crm_order_short = $instance['crm_order_short'];
 		$crm_thumb = $instance['crm_thumb'];
 		$crm_title_class = $instance['crm_title_class'];
 		$crm_date_class = $instance['crm_date_class'];
@@ -52,19 +53,9 @@ class crm_lastposts extends WP_Widget {
 <?php               
                 	wp_reset_postdata();
 					$id_counter = 0;
-					$orderString = "";
-					
-					switch($crm_order){
-						case 'All':
-						$r = new WP_Query( apply_filters( 'widget_posts_args', array( 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => $num_posts, 'cat' => $crm_category, 'no_found_rows' => true, 'post_status' => 'publish', 'ignore_sticky_posts' => true ) ) );
-						break;
-						case 'Popular':
-						$r = new WP_Query( apply_filters( 'widget_posts_args', array( 'orderby' => 'comment_count', 'posts_per_page' => $num_posts, 'cat' => $crm_category, 'no_found_rows' => true, 'post_status' => 'publish', 'ignore_sticky_posts' => true ) ) );
-						break;
-						case 'Random':
-						$r = new WP_Query( apply_filters( 'widget_posts_args', array( 'orderby' => 'rand', 'posts_per_page' => $num_posts, 'cat' => $crm_category, 'no_found_rows' => true, 'post_status' => 'publish', 'ignore_sticky_posts' => true ) ) );
-						break;
-					}
+				
+					$r = new WP_Query (array('orderby' => $crm_order, 'order' => $crm_order_short, 'posts_per_page' => $num_posts, 'cat' => $crm_category, 'no_found_rows' => true, 'post_status' => 'publish', 'ignore_sticky_posts' => true));
+
 					
 					if ($r->have_posts()) :
 				
@@ -93,7 +84,7 @@ class crm_lastposts extends WP_Widget {
                                         <p class="<?php echo $crm_title_class; ?>"><?php the_title(); ?></p>
                                         <p class="<?php echo $crm_date_class; ?>"><?php echo get_the_date(); ?></p>
 <?php
-										if($crm_order == "Popular"){
+										if($crm_order == "comment_count"){
 ?>
                                         	<p class="<?php echo $crm_date_class; ?>"><?php echo comments_number(); ?></p>
 <?php
@@ -156,7 +147,13 @@ class crm_lastposts extends WP_Widget {
 		if (isset($instance['crm_order'])) {
 			$crm_order = $instance['crm_order'];
 		}else{
-			$crm_order = __( 'All', 'wpb_widget_domain' );
+			$crm_order = __( 'date', 'wpb_widget_domain' );
+		}
+		
+		if (isset($instance['crm_order_short'])) {
+			$crm_order_short = $instance['crm_order_short'];
+		}else{
+			$crm_order_short = __( 'asc', 'wpb_widget_domain' );
 		}
 		
 		if (isset($instance['crm_thumb'])) {
@@ -216,9 +213,20 @@ class crm_lastposts extends WP_Widget {
             <p>
             <label for="<?php echo $this->get_field_id( 'crm_order' ); ?>"><?php _e( 'Order By:' ); ?></label> 
             <select class="widefat" id="<?php echo $this->get_field_id( 'crm_order' ); ?>" name="<?php echo $this->get_field_name( 'crm_order' ); ?>">
-            	<option value="All" <?php if($crm_order == "All"){ echo "SELECTED"; } ?> > Date </option>
-                <option value="Popular" <?php if($crm_order == "Popular"){ echo "SELECTED"; } ?> > Most Popular </option>
-                <option value="Random" <?php if($crm_order == "Random"){ echo "SELECTED"; } ?> > Random </option>
+            
+            	<option value="date" <?php if($crm_order == "date"){ echo "SELECTED"; } ?> > Date </option>
+                <option value="comment_count" <?php if($crm_order == "comment_count"){ echo "SELECTED"; } ?> > Most Popular </option>
+                <option value="rand" <?php if($crm_order == "rand"){ echo "SELECTED"; } ?> > Random </option>
+            
+            </select>
+            </p>
+            
+            <p>
+            <select class="widefat" id="<?php echo $this->get_field_id( 'crm_order_short' ); ?>" name="<?php echo $this->get_field_name( 'crm_order_short' ); ?>">
+            
+            	<option value="asc" <?php if($crm_order_short == "asc"){ echo "SELECTED"; } ?> > ASC (Shows the posts from down to up)</option>
+                <option value="desc" <?php if($crm_order_short == "desc"){ echo "SELECTED"; } ?> > DESC (Shows the posts from up to down)</option>
+            
             </select>
             </p>
             
@@ -247,15 +255,14 @@ class crm_lastposts extends WP_Widget {
 			$instance['num_posts'] = ( ! empty( $new_instance['num_posts'] ) ) ? strip_tags( $new_instance['num_posts'] ) : '';
 			$instance['crm_category'] = ( ! empty( $new_instance['crm_category'] ) ) ? strip_tags( $new_instance['crm_category'] ) : '';
 			$instance['crm_order'] = ( ! empty( $new_instance['crm_order'] ) ) ? strip_tags( $new_instance['crm_order'] ) : '';
+			$instance['crm_order_short'] = ( ! empty( $new_instance['crm_order_short'] ) ) ? strip_tags( $new_instance['crm_order_short'] ) : '';
 			$instance['crm_thumb'] = ( ! empty( $new_instance['crm_thumb'] ) ) ? strip_tags( $new_instance['crm_thumb'] ) : '';
 			$instance['crm_title_class'] = ( ! empty( $new_instance['crm_title_class'] ) ) ? strip_tags( $new_instance['crm_title_class'] ) : '';
 			$instance['crm_date_class'] = ( ! empty( $new_instance['crm_date_class'] ) ) ? strip_tags( $new_instance['crm_date_class'] ) : '';
 		return $instance;
 	
 	}
-} //wpb_widget Acaba aquí.
+}
 
-
-//Registramos y cargamos el WidGet
 function wpb_load_widget() { register_widget( 'crm_lastposts' );}
 add_action( 'widgets_init', 'wpb_load_widget' );
