@@ -43,14 +43,20 @@
 }
 
 .nuevoClass {
+	
 	font-size: 1.3vw;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    text-align: center;
-    top: 25%;
-    visibility: visible;
-    width: 100%;
-    font-size: 1vmax;
+	font-size: 1vmax;
 	line-height: 1em;
+	visibility: visible;
+	text-align: center;
+	width: 100%;
+	
+	margin: 0;
+    padding: 0;
+		
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
 }
