@@ -4,7 +4,7 @@
 Plugin Name: CRM LastPosts Widget
 Plugin URI: http://www.cromorama.com/blog/crm-lastposts-widget
 Description: Show the last, most popular or random posts in a visual way. Muestra los últimos posts, los mas populares o de forma aleatoria de manera visual.
-Version: 1.3.1
+Version: 1.3.2
 Author: Cromorama.com
 Author URI: http://www.cromorama.com
 */
@@ -16,6 +16,7 @@ function crm_css() {
 	wp_enqueue_style( 'crmStyle');
 }
 add_action('wp_enqueue_scripts', 'crm_css');
+add_action('admin_enqueue_scripts', 'crm_css');
 
 //Creamos el WidGet
 class crm_lastposts extends WP_Widget {
@@ -210,40 +211,51 @@ class crm_lastposts extends WP_Widget {
 			</select> 
             </p>
             
-            <p>
-            <label for="<?php echo $this->get_field_id( 'crm_order' ); ?>"><?php _e( 'Order By:' ); ?></label> 
-            <select class="widefat" id="<?php echo $this->get_field_id( 'crm_order' ); ?>" name="<?php echo $this->get_field_name( 'crm_order' ); ?>">
-            
-            	<option value="date" <?php if($crm_order == "date"){ echo "SELECTED"; } ?> > Date </option>
-                <option value="comment_count" <?php if($crm_order == "comment_count"){ echo "SELECTED"; } ?> > Most Popular </option>
-                <option value="rand" <?php if($crm_order == "rand"){ echo "SELECTED"; } ?> > Random </option>
-            
-            </select>
+            <p class="marginKill">
+            <label for="<?php echo $this->get_field_id( 'crm_order' ); ?>"><?php _e( 'Order By:' ); ?></label>
             </p>
             
-            <p>
-            <select class="widefat" id="<?php echo $this->get_field_id( 'crm_order_short' ); ?>" name="<?php echo $this->get_field_name( 'crm_order_short' ); ?>">
+            <div class="adminDoubleContainer">
             
-            	<option value="asc" <?php if($crm_order_short == "asc"){ echo "SELECTED"; } ?> > ASC (Shows the posts from down to up)</option>
-                <option value="desc" <?php if($crm_order_short == "desc"){ echo "SELECTED"; } ?> > DESC (Shows the posts from up to down)</option>
+                <p class="leftSide">
+                <select class="widefat" id="<?php echo $this->get_field_id( 'crm_order' ); ?>" name="<?php echo $this->get_field_name( 'crm_order' ); ?>">
+                
+                    <option value="date" <?php if($crm_order == "date"){ echo "SELECTED"; } ?> > Date </option>
+                    <option value="comment_count" <?php if($crm_order == "comment_count"){ echo "SELECTED"; } ?> > Most Popular </option>
+                    <option value="rand" <?php if($crm_order == "rand"){ echo "SELECTED"; } ?> > Random </option>
+                
+                </select>
+                </p>
+                
+                <p class="rightSide">
+                <select class="widefat" id="<?php echo $this->get_field_id( 'crm_order_short' ); ?>" name="<?php echo $this->get_field_name( 'crm_order_short' ); ?>">
+                
+                    <option value="asc" <?php if($crm_order_short == "asc"){ echo "SELECTED"; } ?> > ASC</option>
+                    <option value="desc" <?php if($crm_order_short == "desc"){ echo "SELECTED"; } ?> > DESC</option>
+                
+                </select>
+                </p>
             
-            </select>
-            </p>
+            </div>
             
             <p>
 			<label for="<?php echo $this->get_field_id( 'crm_thumb' ); ?>"><?php _e( 'Thumbnail:' ); ?></label> 
 			<input class="widefat" id="<?php echo $this->get_field_id( 'crm_thumb' ); ?>" name="<?php echo $this->get_field_name( 'crm_thumb' ); ?>" type="text" value="<?php echo esc_attr( $crm_thumb ); ?>" />
 			</p>
             
-            <p>
-			<label for="<?php echo $this->get_field_id( 'crm_title_class' ); ?>"><?php _e( 'Post Title CSS Class:' ); ?></label> 
-			<input class="widefat" id="<?php echo $this->get_field_id( 'crm_title_class' ); ?>" name="<?php echo $this->get_field_name( 'crm_title_class' ); ?>" type="text" value="<?php echo esc_attr( $crm_title_class ); ?>" />
-			</p>
+            <div class="adminDoubleContainer marginBottomEnd">
             
-            <p>
-			<label for="<?php echo $this->get_field_id( 'crm_date_class' ); ?>"><?php _e( 'Post Date CSS Class:' ); ?></label> 
-			<input class="widefat" id="<?php echo $this->get_field_id( 'crm_date_class' ); ?>" name="<?php echo $this->get_field_name( 'crm_date_class' ); ?>" type="text" value="<?php echo esc_attr( $crm_date_class ); ?>" />
-			</p>
+                <p class="leftSide">
+                <label for="<?php echo $this->get_field_id( 'crm_title_class' ); ?>"><?php _e( 'Post Title CSS Class:' ); ?></label> 
+                <input class="widefat" id="<?php echo $this->get_field_id( 'crm_title_class' ); ?>" name="<?php echo $this->get_field_name( 'crm_title_class' ); ?>" type="text" value="<?php echo esc_attr( $crm_title_class ); ?>" />
+                </p>
+                
+                <p class="rightSide">
+                <label for="<?php echo $this->get_field_id( 'crm_date_class' ); ?>"><?php _e( 'Post Date CSS Class:' ); ?></label> 
+                <input class="widefat" id="<?php echo $this->get_field_id( 'crm_date_class' ); ?>" name="<?php echo $this->get_field_name( 'crm_date_class' ); ?>" type="text" value="<?php echo esc_attr( $crm_date_class ); ?>" />
+                </p>
+                
+			</div>
 <?php 
 		}
 		

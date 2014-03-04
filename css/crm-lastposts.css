@@ -1,5 +1,31 @@
 /* Estilos Cromorama LastPosts */
 
+/* ADMIN LAYOUT */
+
+.adminDoubleContainer{
+	overflow:auto;
+}
+
+.marginKill{
+	margin:0;
+}
+
+.leftSide{
+	float:left;
+	width:49%;
+	margin:0;
+}
+
+.rightSide{
+	float:right;
+	width:49%;
+	margin:0;
+}
+
+.marginBottomEnd{
+	margin-bottom:10px;
+}
+
 /* VARIUS */
 
 .postContainer{
