@@ -4,11 +4,10 @@
 Plugin Name: CRM LastPosts Widget
 Plugin URI: http://www.cromorama.com/blog/crm-lastposts-widget
 Description: Show the last, most popular or random posts in a visual way. Muestra los últimos posts, los mas populares o de forma aleatoria de manera visual.
-Version: 1.3.2
+Version: 1.3.4
 Author: Cromorama.com
 Author URI: http://www.cromorama.com
 */
-
 
 //Registramos el archivo CSS del Plugin
 function crm_css() {
@@ -26,9 +25,9 @@ class crm_lastposts extends WP_Widget {
 		// Base ID of your widget
 		'crm_lastposts', 
 		// Widget name will appear in UI
-		__('CRM LastPosts Widget', 'wpb_widget_domain'), 
+		__('CRM LastPosts Widget', 'crm-lastposts'), 
 		// Widget description
-		array( 'description' => __( 'Shows the last posts of any category you choose using the thumbnail image with some effects.', 'wpb_widget_domain' ), ) 
+		array( 'description' => __('Shows the last posts of any category you choose using the thumbnail image with some effects.', 'crm-lastposts'), ) 
 		);
 	}
 	
@@ -130,76 +129,76 @@ class crm_lastposts extends WP_Widget {
 		if (isset($instance['title'])) {
 			$title = $instance['title'];
 		}else{
-			$title = __( 'Título', 'wpb_widget_domain' );
+			$title = __('Title', 'crm-lastposts');
 		}
 		
 		if (isset($instance['num_posts'])) {
 			$num_posts = $instance['num_posts'];
 		}else{
-			$num_posts = __( '3', 'wpb_widget_domain' );
+			$num_posts = __('nposts', 'crm-lastposts');
 		}
 		
 		if (isset($instance['crm_category'])) {
 			$crm_category = $instance['crm_category'];
 		}else{
-			$crm_category = __( 'All', 'wpb_widget_domain' );
+			$crm_category = __('all', 'crm-lastposts');
 		}
 		
 		if (isset($instance['crm_order'])) {
 			$crm_order = $instance['crm_order'];
 		}else{
-			$crm_order = __( 'date', 'wpb_widget_domain' );
+			$crm_order = __('date', 'crm-lastposts');
 		}
 		
 		if (isset($instance['crm_order_short'])) {
 			$crm_order_short = $instance['crm_order_short'];
 		}else{
-			$crm_order_short = __( 'asc', 'wpb_widget_domain' );
+			$crm_order_short = __('asc', 'crm-lastposts');
 		}
 		
 		if (isset($instance['crm_thumb'])) {
 			$crm_thumb = $instance['crm_thumb'];
 		}else{
-			$crm_thumb = __( 'medium', 'wpb_widget_domain' );
+			$crm_thumb = __('medium', 'crm-lastposts');
 		}
 		
 		if (isset($instance['crm_title_class'])) {
 			$crm_title_class = $instance['crm_title_class'];
 		}else{
-			$crm_title_class = __( 'defaultTitle', 'wpb_widget_domain' );
+			$crm_title_class = __('defaultTitle', 'crm-lastposts');
 		}
 		
 		if (isset($instance['crm_date_class'])) {
 			$crm_date_class = $instance['crm_date_class'];
 		}else{
-			$crm_date_class = __( 'defaultDate', 'wpb_widget_domain' );
+			$crm_date_class = __('defaultDate', 'crm-lastposts');
 		}
 		
-		//Recuperación de Categorías
+		//Recuperacion de Categorias
 		$cat_args = array(
 		  'orderby' => 'name',
 		  'order' => 'ASC'
 		);
 		
 		$categories = get_categories($cat_args);
-		//FIN Recuperación de Categorías
+		//FIN Recuperacion de Categorías
 	
 			// Widget admin form
 ?>
 			<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title', 'crm-lastposts'); ?>:</label> 
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 			</p>
             
             <p>
-			<label for="<?php echo $this->get_field_id( 'num_posts' ); ?>"><?php _e( 'Posts Number:' ); ?></label> 
+			<label for="<?php echo $this->get_field_id( 'num_posts' ); ?>"><?php _e('Posts Number', 'crm-lastposts'); ?>:</label> 
 			<input class="widefat" id="<?php echo $this->get_field_id( 'num_posts' ); ?>" name="<?php echo $this->get_field_name( 'num_posts' ); ?>" type="text" value="<?php echo esc_attr( $num_posts ); ?>" />
 			</p>
             <p>
-            <label for="<?php echo $this->get_field_id( 'crm_category' ); ?>"><?php _e( 'Category to show:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'crm_category' ); ?>"><?php _e('Category to show', 'crm-lastposts'); ?>:</label> 
             <select class="widefat" id="<?php echo $this->get_field_id( 'crm_category' ); ?>" name="<?php echo $this->get_field_name( 'crm_category' ); ?>">
             
-            <option value="All" <?php if($crm_category == "All"){ echo "SELECTED"; } ?> > All Categories </option>
+            <option value="All" <?php if($crm_category == "All"){ echo "SELECTED"; } ?> > <?php _e('All Categories', 'crm-lastposts'); ?> </option>
             
 <?php  
 			foreach($categories as $all_category) { 
@@ -212,7 +211,7 @@ class crm_lastposts extends WP_Widget {
             </p>
             
             <p class="marginKill">
-            <label for="<?php echo $this->get_field_id( 'crm_order' ); ?>"><?php _e( 'Order By:' ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'crm_order' ); ?>"><?php _e('Order By', 'crm-lastposts'); ?>:</label>
             </p>
             
             <div class="adminDoubleContainer">
@@ -220,9 +219,9 @@ class crm_lastposts extends WP_Widget {
                 <p class="leftSide">
                 <select class="widefat" id="<?php echo $this->get_field_id( 'crm_order' ); ?>" name="<?php echo $this->get_field_name( 'crm_order' ); ?>">
                 
-                    <option value="date" <?php if($crm_order == "date"){ echo "SELECTED"; } ?> > Date </option>
-                    <option value="comment_count" <?php if($crm_order == "comment_count"){ echo "SELECTED"; } ?> > Most Popular </option>
-                    <option value="rand" <?php if($crm_order == "rand"){ echo "SELECTED"; } ?> > Random </option>
+                    <option value="date" <?php if($crm_order == "date"){ echo "SELECTED"; } ?> ><?php _e('Date', 'crm-lastposts'); ?></option>
+                    <option value="comment_count" <?php if($crm_order == "comment_count"){ echo "SELECTED"; } ?> ><?php _e('Most Popular', 'crm-lastposts'); ?></option>
+                    <option value="rand" <?php if($crm_order == "rand"){ echo "SELECTED"; } ?> ><?php _e('Random', 'crm-lastposts'); ?></option>
                 
                 </select>
                 </p>
@@ -239,19 +238,19 @@ class crm_lastposts extends WP_Widget {
             </div>
             
             <p>
-			<label for="<?php echo $this->get_field_id( 'crm_thumb' ); ?>"><?php _e( 'Thumbnail:' ); ?></label> 
+			<label for="<?php echo $this->get_field_id( 'crm_thumb' ); ?>"><?php _e('Thumbnail', 'crm-lastposts'); ?>:</label> 
 			<input class="widefat" id="<?php echo $this->get_field_id( 'crm_thumb' ); ?>" name="<?php echo $this->get_field_name( 'crm_thumb' ); ?>" type="text" value="<?php echo esc_attr( $crm_thumb ); ?>" />
 			</p>
             
             <div class="adminDoubleContainer marginBottomEnd">
             
                 <p class="leftSide">
-                <label for="<?php echo $this->get_field_id( 'crm_title_class' ); ?>"><?php _e( 'Post Title CSS Class:' ); ?></label> 
+                <label for="<?php echo $this->get_field_id( 'crm_title_class' ); ?>"><?php _e('Post Title CSS Class', 'crm-lastposts'); ?>:</label> 
                 <input class="widefat" id="<?php echo $this->get_field_id( 'crm_title_class' ); ?>" name="<?php echo $this->get_field_name( 'crm_title_class' ); ?>" type="text" value="<?php echo esc_attr( $crm_title_class ); ?>" />
                 </p>
                 
                 <p class="rightSide">
-                <label for="<?php echo $this->get_field_id( 'crm_date_class' ); ?>"><?php _e( 'Post Date CSS Class:' ); ?></label> 
+                <label for="<?php echo $this->get_field_id( 'crm_date_class' ); ?>"><?php _e('Post Date CSS Class', 'crm-lastposts'); ?>:</label> 
                 <input class="widefat" id="<?php echo $this->get_field_id( 'crm_date_class' ); ?>" name="<?php echo $this->get_field_name( 'crm_date_class' ); ?>" type="text" value="<?php echo esc_attr( $crm_date_class ); ?>" />
                 </p>
                 
@@ -276,5 +275,8 @@ class crm_lastposts extends WP_Widget {
 	}
 }
 
-function wpb_load_widget() { register_widget( 'crm_lastposts' );}
+function wpb_load_widget() { 
+	register_widget( 'crm_lastposts' );
+	load_plugin_textdomain( 'crm-lastposts', false, 'crm-last-posts-widget/languajes' );
+}
 add_action( 'widgets_init', 'wpb_load_widget' );

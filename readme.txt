@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=info%
 Tags: widget, last, posts, most, popular, random, últimos, posts, populares, aleatorios, image, imagen, mouseover, effect
 Requires at least: 3.8
 Tested up to: 3.8
-Stable tag: 1.3.2
+Stable tag: 1.3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,6 +12,8 @@ Show the last, most popular and random posts in a visual widget using the thumbn
 Muestra los últimos posts, los más populares y aleatorios en un widget de forma visual usando la imágen destacada de los posts.
 
 == Description ==
+
+Multilanguaje widget: EN / ES / FR
 
 CRM LastPosts Widget shows the Last Posts, the Most Popular Posts and Random Posts in a visual way using the thumbnail of every post. It shows the post title and date when you mousover the image. In the Popular Posts mode you see the post number aswell.
 
@@ -37,6 +39,16 @@ Mas información en: http://www.cromorama.com/blog/crm-lastposts-widget/. Iremos
 2. Image of the widget running. Imagen del widget funcionando.
 
 == Changelog ==
+
+= 1.3.4 =
+
+* Minor bug fixed
+* Solucionado error menor.
+
+= 1.3.3 =
+
+* Added multilingual feature with EN / ES / FR so far.
+* Añadida capacidad multi-idioma con EN / ES / FR de momento.
 
 = 1.3.2 =
 
