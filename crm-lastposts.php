@@ -4,7 +4,7 @@
 Plugin Name: CRM LastPosts Widget
 Plugin URI: http://www.cromorama.com/blog/crm-lastposts-widget
 Description: Show the last, most popular or random posts in a visual way. Muestra los últimos posts, los mas populares o de forma aleatoria de manera visual.
-Version: 1.3.4
+Version: 1.3.5
 Author: Cromorama.com
 Author URI: http://www.cromorama.com
 */
@@ -61,6 +61,7 @@ class crm_lastposts extends WP_Widget {
 				
 						while ( $r->have_posts() ) : $r->the_post(); 
 ?>
+                            
                             <a href="<?php the_permalink(); ?>" title="" rel="bookmark">
                                 <div class="postContainer" onmouseover="hacer_hover_<?php echo $id_counter; ?>()" onmouseout="quitar_hover_<?php echo $id_counter; ?>()">
 <?php
@@ -153,7 +154,7 @@ class crm_lastposts extends WP_Widget {
 		if (isset($instance['crm_order_short'])) {
 			$crm_order_short = $instance['crm_order_short'];
 		}else{
-			$crm_order_short = __('asc', 'crm-lastposts');
+			$crm_order_short = __('ASC', 'crm-lastposts');
 		}
 		
 		if (isset($instance['crm_thumb'])) {
@@ -229,8 +230,8 @@ class crm_lastposts extends WP_Widget {
                 <p class="rightSide">
                 <select class="widefat" id="<?php echo $this->get_field_id( 'crm_order_short' ); ?>" name="<?php echo $this->get_field_name( 'crm_order_short' ); ?>">
                 
-                    <option value="asc" <?php if($crm_order_short == "asc"){ echo "SELECTED"; } ?> > ASC</option>
-                    <option value="desc" <?php if($crm_order_short == "desc"){ echo "SELECTED"; } ?> > DESC</option>
+                    <option value="ASC" <?php if($crm_order_short == "ASC"){ echo "SELECTED"; } ?> >ASC</option>
+                    <option value="DESC" <?php if($crm_order_short == "DESC"){ echo "SELECTED"; } ?> >DESC</option>
                 
                 </select>
                 </p>
