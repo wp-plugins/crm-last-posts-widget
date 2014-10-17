@@ -1,0 +1,182 @@
+/* Estilos Cromorama LastPosts */
+/* Versión 1.4.0 - 16|10|2014 */
+
+/* ADMIN LAYOUT */
+
+.adminDoubleContainer{
+	overflow:auto;
+}
+
+.marginKill{
+	margin:0;
+}
+
+.leftSide{
+	float:left;
+	width:49%;
+	margin:0;
+}
+
+.rightSide{
+	float:right;
+	width:49%;
+	margin:0;
+}
+
+.marginBottomEnd{
+	margin-bottom:10px;
+}
+
+/* EFFECTS CONTAINER */
+
+.mask{
+}
+	/* WHITE OPACITY */
+
+	.postContainerOpacity{
+		position:relative;
+		margin-top: 10px;
+		background:#FFF;
+	}
+	
+	/* BLACK OPACITY */
+
+	.postContainerOpacityBlack{
+		position:relative;
+		margin-top: 10px;
+		background:#000;
+	}
+
+	/* IMAGE GROW */
+
+	.postContainerGrow{
+		position:relative;
+		margin-top: 10px;
+		overflow:hidden;
+	}
+
+	/* IMAGE SHRINK */
+
+	.postContainerShrink{
+		position:relative;
+		margin-top: 10px;
+		overflow:hidden;
+	}
+
+/* IMAGES AND EFFECTS */
+
+	/* WHITE OPACITY */
+
+	.postContainerOpacity img {
+		opacity:1;
+		transition:opacity 0.2s ;
+	}
+	
+	.postContainerOpacity:hover img{
+		opacity:0.3;
+		filter:alpha(opacity=40); /* For IE8 and earlier */
+		transition:opacity 0.2s ;
+	}
+
+	/* BLACK OPACITY */
+
+	.postContainerOpacityBlack img {
+		opacity: 1;
+		transition: opacity .25s ease-in-out;
+		-moz-transition: opacity .25s ease-in-out;
+		-webkit-transition: opacity .25s ease-in-out;
+	}
+	
+	.postContainerOpacityBlack:hover img{
+		opacity:0.3;
+	}
+
+	/* IMAGE GROW */
+
+	.postContainerGrow img{
+		-webkit-transition:-webkit-transform 0.5s ease-out;
+		-moz-transition:-moz-transform 0.5s ease-out;
+		-o-transition:-o-transform 0.5s ease-out;
+		-ms-transition:-ms-transform 0.5s ease-out;
+		transition:transform 0.5s ease-out;
+	}
+	
+	.postContainerGrow:hover img{
+		-webkit-transform: scale(1.2);
+		-moz-transform: scale(1.2);
+		-o-transform: scale(1.2);
+		-ms-transform: scale(1.2);
+		transform: scale(1.2);
+	}
+
+	/* IMAGE SHRINK */
+
+	.postContainerShrink img {
+		-webkit-transition: all 1s ease;
+		-moz-transition: all 1s ease;
+		-o-transition: all 1s ease;
+		-ms-transition: all 1s ease;
+		transition: all 1s ease;
+		
+		-webkit-transform: scale(1.2);
+		-moz-transform: scale(1.2);
+		-o-transform: scale(1.2);
+		-ms-transform: scale(1.2);
+		transform: scale(1.2);
+	}
+	 
+	.postContainerShrink:hover img {
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-o-transform: scale(1);
+		-ms-transform: scale(1);
+		transform: scale(1);
+	}
+
+/* TEXTS */
+
+.defaultBox{
+	background: rgba(0, 0, 0, 0.4);
+	width:70%;
+	padding:5px;
+	margin: 0 auto;
+
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+.defaultTitle{
+	margin:0;
+	margin-bottom:5px;
+}
+
+.defaultDate{
+	color:#FFF;
+	margin:0;
+}
+
+.text {
+	visibility:hidden;
+	position:absolute;
+	text-align:center;
+}
+
+.nuevoClass {
+	
+	font-size: 1.3vw;
+	font-size: 1vmax;
+	line-height: 1em;
+	visibility: visible;
+	text-align: center;
+	width: 100%;
+	
+	margin: 0;
+    padding: 0;
+		
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
