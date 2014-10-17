@@ -3,8 +3,8 @@
 /*
 Plugin Name: CRM LastPosts Widget
 Plugin URI: http://www.cromorama.com/blog/crm-lastposts-widget
-Description: Show the last, most popular or random posts in a visual way. Muestra los últimos posts, los mas populares o de forma aleatoria de manera visual.
-Version: 1.3.5
+Description: Shows the last, most popular or random posts of any category you choose using a selected thumbnail image and different effects.
+Version: 1.4.0
 Author: Cromorama.com
 Author URI: http://www.cromorama.com
 */
@@ -27,7 +27,7 @@ class crm_lastposts extends WP_Widget {
 		// Widget name will appear in UI
 		__('CRM LastPosts Widget', 'crm-lastposts'), 
 		// Widget description
-		array( 'description' => __('Shows the last posts of any category you choose using the thumbnail image with some effects.', 'crm-lastposts'), ) 
+		array( 'description' => __('Shows the last, most popular or random posts of any category you choose using a selected thumbnail image and different effects.', 'crm-lastposts'), ) 
 		);
 	}
 	
@@ -39,7 +39,10 @@ class crm_lastposts extends WP_Widget {
 		$crm_category = $instance['crm_category'];
 		$crm_order = $instance['crm_order'];
 		$crm_order_short = $instance['crm_order_short'];
+		$crm_effect = $instance['crm_effect'];
 		$crm_thumb = $instance['crm_thumb'];
+		$crm_text_container_class_activate = $instance['crm_text_container_class_activate'];
+		$crm_text_container_class = $instance['crm_text_container_class'];
 		$crm_title_class = $instance['crm_title_class'];
 		$crm_date_class = $instance['crm_date_class'];
 		
@@ -56,14 +59,13 @@ class crm_lastposts extends WP_Widget {
 				
 					$r = new WP_Query (array('orderby' => $crm_order, 'order' => $crm_order_short, 'posts_per_page' => $num_posts, 'cat' => $crm_category, 'no_found_rows' => true, 'post_status' => 'publish', 'ignore_sticky_posts' => true));
 
-					
 					if ($r->have_posts()) :
 				
 						while ( $r->have_posts() ) : $r->the_post(); 
 ?>
-                            
                             <a href="<?php the_permalink(); ?>" title="" rel="bookmark">
-                                <div class="postContainer" onmouseover="hacer_hover_<?php echo $id_counter; ?>()" onmouseout="quitar_hover_<?php echo $id_counter; ?>()">
+                            
+                            	<div class="<?php echo $crm_effect; ?>" onmouseover="hacer_hover_<?php echo $id_counter; ?>()" onmouseout="quitar_hover_<?php echo $id_counter; ?>()">
 <?php
 									if (has_post_thumbnail()){
 ?>
@@ -82,15 +84,27 @@ class crm_lastposts extends WP_Widget {
 									}
 ?>
                                     <div id="fecha<?php echo $id_counter; ?>" class="text">
-                                        <p class="<?php echo $crm_title_class; ?>"><?php the_title(); ?></p>
-                                        <p class="<?php echo $crm_date_class; ?>"><?php echo get_the_date(); ?></p>
 <?php
-										if($crm_order == "comment_count"){
+										if($crm_text_container_class_activate == 1){
 ?>
-                                        	<p class="<?php echo $crm_date_class; ?>"><?php echo comments_number(); ?></p>
+											<div id="" class="<?php echo $crm_text_container_class; ?>">
 <?php
-
-                                    	}
+										}
+?>                                   
+                                                <h4 class="<?php echo $crm_title_class; ?>"><?php the_title(); ?></h4>
+                                                <p class="<?php echo $crm_date_class; ?>"><?php echo get_the_date(); ?></p>
+<?php
+                                                if($crm_order == "comment_count"){
+?>
+                                                    <p class="<?php echo $crm_date_class; ?>" style="margin-top:5px;"><?php echo comments_number(); ?></p>
+<?php
+                                                }
+											
+										if($crm_text_container_class_activate == 1){
+?>
+											</div>
+<?php	
+										}
 ?>
                                     </div>
                                 </div>
@@ -127,53 +141,17 @@ class crm_lastposts extends WP_Widget {
 	//Widget BackEnd 
 	public function form($instance) {
 		
-		if (isset($instance['title'])) {
-			$title = $instance['title'];
-		}else{
-			$title = __('Title', 'crm-lastposts');
-		}
-		
-		if (isset($instance['num_posts'])) {
-			$num_posts = $instance['num_posts'];
-		}else{
-			$num_posts = __('nposts', 'crm-lastposts');
-		}
-		
-		if (isset($instance['crm_category'])) {
-			$crm_category = $instance['crm_category'];
-		}else{
-			$crm_category = __('all', 'crm-lastposts');
-		}
-		
-		if (isset($instance['crm_order'])) {
-			$crm_order = $instance['crm_order'];
-		}else{
-			$crm_order = __('date', 'crm-lastposts');
-		}
-		
-		if (isset($instance['crm_order_short'])) {
-			$crm_order_short = $instance['crm_order_short'];
-		}else{
-			$crm_order_short = __('ASC', 'crm-lastposts');
-		}
-		
-		if (isset($instance['crm_thumb'])) {
-			$crm_thumb = $instance['crm_thumb'];
-		}else{
-			$crm_thumb = __('medium', 'crm-lastposts');
-		}
-		
-		if (isset($instance['crm_title_class'])) {
-			$crm_title_class = $instance['crm_title_class'];
-		}else{
-			$crm_title_class = __('defaultTitle', 'crm-lastposts');
-		}
-		
-		if (isset($instance['crm_date_class'])) {
-			$crm_date_class = $instance['crm_date_class'];
-		}else{
-			$crm_date_class = __('defaultDate', 'crm-lastposts');
-		}
+		if (isset($instance['title'])){ $title = $instance['title']; }else{ $title = __('Title', 'crm-lastposts');	}
+		if (isset($instance['num_posts'])){	$num_posts = $instance['num_posts']; }else{ $num_posts = __('nposts', 'crm-lastposts');}
+		if (isset($instance['crm_category'])){ $crm_category = $instance['crm_category']; }else{ $crm_category = __('all', 'crm-lastposts'); }
+		if (isset($instance['crm_order'])){ $crm_order = $instance['crm_order']; }else{ $crm_order = __('date', 'crm-lastposts'); }
+		if (isset($instance['crm_order_short'])){ $crm_order_short = $instance['crm_order_short'];	}else{ $crm_order_short = "ASC"; }
+		if (isset($instance['crm_effect'])){ $crm_effect = $instance['crm_effect']; }else{ $crm_effect = "postContainerOpacity"; }
+		if (isset($instance['crm_thumb'])){	$crm_thumb = $instance['crm_thumb']; }else{ $crm_thumb = "medium"; }
+		if (isset($instance['crm_text_container_class_activate'])){ $crm_text_container_class_activate = $instance['crm_text_container_class_activate']; }else{ $crm_text_container_class_activate = 0; }
+		if (isset($instance['crm_text_container_class'])){ $crm_text_container_class = $instance['crm_text_container_class']; }else{ $crm_text_container_class = "defaultBox"; }
+		if (isset($instance['crm_title_class'])){ $crm_title_class = $instance['crm_title_class']; }else{ $crm_title_class = "defaultTitle"; }
+		if (isset($instance['crm_date_class'])){ $crm_date_class = $instance['crm_date_class']; }else{ $crm_date_class = "defaultDate"; }
 		
 		//Recuperacion de Categorias
 		$cat_args = array(
@@ -184,7 +162,6 @@ class crm_lastposts extends WP_Widget {
 		$categories = get_categories($cat_args);
 		//FIN Recuperacion de Categorías
 	
-			// Widget admin form
 ?>
 			<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title', 'crm-lastposts'); ?>:</label> 
@@ -230,8 +207,8 @@ class crm_lastposts extends WP_Widget {
                 <p class="rightSide">
                 <select class="widefat" id="<?php echo $this->get_field_id( 'crm_order_short' ); ?>" name="<?php echo $this->get_field_name( 'crm_order_short' ); ?>">
                 
-                    <option value="ASC" <?php if($crm_order_short == "ASC"){ echo "SELECTED"; } ?> >ASC</option>
-                    <option value="DESC" <?php if($crm_order_short == "DESC"){ echo "SELECTED"; } ?> >DESC</option>
+                    <option value="ASC" <?php if($crm_order_short == "ASC"){ echo "SELECTED"; } ?> ><?php _e('ASC', 'crm-lastposts'); ?></option>
+                    <option value="DESC" <?php if($crm_order_short == "DESC"){ echo "SELECTED"; } ?> ><?php _e('DESC', 'crm-lastposts'); ?></option>
                 
                 </select>
                 </p>
@@ -239,9 +216,36 @@ class crm_lastposts extends WP_Widget {
             </div>
             
             <p>
-			<label for="<?php echo $this->get_field_id( 'crm_thumb' ); ?>"><?php _e('Thumbnail', 'crm-lastposts'); ?>:</label> 
+            <label for="<?php echo $this->get_field_id( 'crm_effect' ); ?>"><?php _e('Effect', 'crm-lastposts'); ?>:</label>
+            <select class="widefat" id="<?php echo $this->get_field_id( 'crm_effect' ); ?>" name="<?php echo $this->get_field_name( 'crm_effect' ); ?>">
+            
+                <option value="postContainerOpacity" <?php if($crm_effect == "postContainerOpacity"){ echo "SELECTED"; } ?> ><?php _e('White Opacity', 'crm-lastposts'); ?></option>
+                <option value="postContainerOpacityBlack" <?php if($crm_effect == "postContainerOpacityBlack"){ echo "SELECTED"; } ?> ><?php _e('Black Opacity', 'crm-lastposts'); ?></option>
+                <option value="postContainerGrow" <?php if($crm_effect == "postContainerGrow"){ echo "SELECTED"; } ?> ><?php _e('Image Grow', 'crm-lastposts'); ?></option>
+                <option value="postContainerShrink" <?php if($crm_effect == "postContainerShrink"){ echo "SELECTED"; } ?> ><?php _e('Image Shrink', 'crm-lastposts'); ?></option>
+            
+            </select>
+			</p>
+            
+            <p>
+			<label for="<?php echo $this->get_field_id( 'crm_thumb' ); ?>"><?php _e('Thumbnail', 'crm-lastposts'); ?>:</label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'crm_thumb' ); ?>" name="<?php echo $this->get_field_name( 'crm_thumb' ); ?>" type="text" value="<?php echo esc_attr( $crm_thumb ); ?>" />
 			</p>
+            
+            <div class="adminDoubleContainer marginBottomEnd">
+            
+                <p class="leftSide">
+				<label for="<?php echo $this->get_field_id( 'crm_text_container_class_activate' ); ?>"><?php _e('Activate Text Container', 'crm-lastposts'); ?>:</label>
+                <br />
+                <input type="checkbox" name="<?php echo $this->get_field_name( 'crm_text_container_class_activate' ); ?>" value="1" <?php if($crm_text_container_class_activate == 1)echo "checked"; ?> > <?php _e('Click for active box', 'crm-lastposts'); ?>
+                </p>
+                
+                <p class="rightSide">
+                <label for="<?php echo $this->get_field_id( 'crm_text_container_class' ); ?>"><?php _e('Post Text Container CSS Class', 'crm-lastposts'); ?>:</label> 
+                <input class="widefat" id="<?php echo $this->get_field_id( 'crm_text_container_class' ); ?>" name="<?php echo $this->get_field_name( 'crm_text_container_class' ); ?>" type="text" value="<?php echo esc_attr( $crm_text_container_class ); ?>" />
+                </p>
+            
+            </div>
             
             <div class="adminDoubleContainer marginBottomEnd">
             
@@ -268,7 +272,10 @@ class crm_lastposts extends WP_Widget {
 			$instance['crm_category'] = ( ! empty( $new_instance['crm_category'] ) ) ? strip_tags( $new_instance['crm_category'] ) : '';
 			$instance['crm_order'] = ( ! empty( $new_instance['crm_order'] ) ) ? strip_tags( $new_instance['crm_order'] ) : '';
 			$instance['crm_order_short'] = ( ! empty( $new_instance['crm_order_short'] ) ) ? strip_tags( $new_instance['crm_order_short'] ) : '';
+			$instance['crm_effect'] = ( ! empty( $new_instance['crm_effect'] ) ) ? strip_tags( $new_instance['crm_effect'] ) : '';
 			$instance['crm_thumb'] = ( ! empty( $new_instance['crm_thumb'] ) ) ? strip_tags( $new_instance['crm_thumb'] ) : '';
+			$instance['crm_text_container_class_activate'] = ( ! empty( $new_instance['crm_text_container_class_activate'] ) ) ? strip_tags( $new_instance['crm_text_container_class_activate'] ) : '';
+			$instance['crm_text_container_class'] = ( ! empty( $new_instance['crm_text_container_class'] ) ) ? strip_tags( $new_instance['crm_text_container_class'] ) : '';
 			$instance['crm_title_class'] = ( ! empty( $new_instance['crm_title_class'] ) ) ? strip_tags( $new_instance['crm_title_class'] ) : '';
 			$instance['crm_date_class'] = ( ! empty( $new_instance['crm_date_class'] ) ) ? strip_tags( $new_instance['crm_date_class'] ) : '';
 		return $instance;
