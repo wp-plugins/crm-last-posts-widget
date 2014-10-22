@@ -29,8 +29,6 @@
 
 /* EFFECTS CONTAINER */
 
-.mask{
-}
 	/* WHITE OPACITY */
 
 	.postContainerOpacity{
@@ -61,6 +59,14 @@
 		position:relative;
 		margin-top: 10px;
 		overflow:hidden;
+	}
+	
+	/* IMAGE BLUR */
+	
+	.postContainerRotateText{
+		position:relative;
+		margin-top: 10px;
+		overflow:hidden;	
 	}
 
 /* IMAGES AND EFFECTS */
@@ -133,6 +139,75 @@
 		transform: scale(1);
 	}
 
+	/* IMAGE BLUR */
+	
+	.postContainerRotateText img {
+	   -webkit-transition: all 0.4s ease-in-out 0.2s;
+	   -moz-transition: all 0.4s ease-in-out 0.2s;
+	   -o-transition: all 0.4s ease-in-out 0.2s;
+	   -ms-transition: all 0.4s ease-in-out 0.2s;
+	   transition: all 0.4s ease-in-out 0.2s;
+	   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	   filter: alpha(opacity=100);
+	   opacity: 1;
+	}
+	
+	.postContainerRotateText:hover img {
+	   -webkit-transform: scale(0);
+	   -moz-transform: scale(0);
+	   -o-transform: scale(0);
+	   -ms-transform: scale(0);
+	   transform: scale(0);
+	   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	   filter: alpha(opacity=0);
+	   opacity: 0;
+	   -webkit-transition-delay: 0s;
+	   -moz-transition-delay: 0s;
+	   -o-transition-delay: 0s;
+	   -ms-transition-delay: 0s;
+	   transition-delay: 0s;
+	}
+
+/* EFFECTS MASKS */
+
+	/* ROTATE TEXT MASK */
+
+	.postContainerRotateTextMask{
+		background-color: rgba(0,0,0,0.8);
+		-ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+		filter: alpha(opacity=0);
+		opacity: 0;
+		-webkit-transform: scale(0) rotate(-180deg);
+		-moz-transform: scale(0) rotate(-180deg);
+		-o-transform: scale(0) rotate(-180deg);
+		-ms-transform: scale(0) rotate(-180deg);
+		transform: scale(0) rotate(-180deg);
+		-webkit-transition: all 0.4s ease-in;
+		-moz-transition: all 0.4s ease-in;
+		-o-transition: all 0.4s ease-in;
+		-ms-transition: all 0.4s ease-in;
+		transition: all 0.4s ease-in;
+		-webkit-border-radius: 0px;
+		-moz-border-radius: 0px;
+		border-radius: 0px;
+	}
+	
+	.postContainerRotateText:hover .postContainerRotateTextMask {
+	   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	   filter: alpha(opacity=100);
+	   opacity: 1;
+	   -webkit-transform: scale(1) rotate(0deg);
+	   -moz-transform: scale(1) rotate(0deg);
+	   -o-transform: scale(1) rotate(0deg);
+	   -ms-transform: scale(1) rotate(0deg);
+	   transform: scale(1) rotate(0deg);
+	   -webkit-transition-delay: 0.2s;
+	   -moz-transition-delay: 0.2s;
+	   -o-transition-delay: 0.2s;
+	   -ms-transition-delay: 0.2s;
+	   transition-delay: 0.2s;
+	}
+
 /* TEXTS */
 
 .defaultBox{
@@ -160,10 +235,11 @@
 	visibility:hidden;
 	position:absolute;
 	text-align:center;
+	height:0;
+	width:0;
 }
 
 .nuevoClass {
-	
 	font-size: 1.3vw;
 	font-size: 1vmax;
 	line-height: 1em;

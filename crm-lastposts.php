@@ -4,7 +4,7 @@
 Plugin Name: CRM LastPosts Widget
 Plugin URI: http://www.cromorama.com/blog/crm-lastposts-widget
 Description: Shows the last, most popular or random posts of any category you choose using a selected thumbnail image and different effects.
-Version: 1.4.0
+Version: 1.4.1
 Author: Cromorama.com
 Author URI: http://www.cromorama.com
 */
@@ -68,44 +68,38 @@ class crm_lastposts extends WP_Widget {
                             	<div class="<?php echo $crm_effect; ?>" onmouseover="hacer_hover_<?php echo $id_counter; ?>()" onmouseout="quitar_hover_<?php echo $id_counter; ?>()">
 <?php
 									if (has_post_thumbnail()){
-?>
-										<div class="mask">	
-                                        	<?php the_post_thumbnail($crm_thumb); ?>
-                                    	</div>
-<?php
+                                        	the_post_thumbnail($crm_thumb);
+
 									}else{
-?>
-                                    	<div class="mask">
-<?php
 											echo '<img src="' . plugins_url( 'img/no-image.jpg' , __FILE__ ) . '" > ';
-?>
-                                        </div>
-<?php
 									}
 ?>
+                                    
                                     <div id="fecha<?php echo $id_counter; ?>" class="text">
+                                        <div class="<?php echo $crm_effect; ?>Mask">
 <?php
-										if($crm_text_container_class_activate == 1){
+                                            if($crm_text_container_class_activate == 1){
 ?>
-											<div id="" class="<?php echo $crm_text_container_class; ?>">
+                                                <div id="" class="<?php echo $crm_text_container_class; ?>">
 <?php
-										}
+                                            }
 ?>                                   
-                                                <h4 class="<?php echo $crm_title_class; ?>"><?php the_title(); ?></h4>
-                                                <p class="<?php echo $crm_date_class; ?>"><?php echo get_the_date(); ?></p>
+                                                    <h4 class="<?php echo $crm_title_class; ?>"><?php the_title(); ?></h4>
+                                                    <p class="<?php echo $crm_date_class; ?>"><?php echo get_the_date(); ?></p>
 <?php
-                                                if($crm_order == "comment_count"){
+                                                    if($crm_order == "comment_count"){
 ?>
-                                                    <p class="<?php echo $crm_date_class; ?>" style="margin-top:5px;"><?php echo comments_number(); ?></p>
+                                                        <p class="<?php echo $crm_date_class; ?>" style="margin-top:5px;"><?php echo comments_number(); ?></p>
 <?php
-                                                }
-											
-										if($crm_text_container_class_activate == 1){
+                                                    }
+                                                
+                                            if($crm_text_container_class_activate == 1){
 ?>
-											</div>
+                                                </div>
 <?php	
-										}
+                                            }
 ?>
+                                        </div>
                                     </div>
                                 </div>
                             </a>
@@ -223,6 +217,7 @@ class crm_lastposts extends WP_Widget {
                 <option value="postContainerOpacityBlack" <?php if($crm_effect == "postContainerOpacityBlack"){ echo "SELECTED"; } ?> ><?php _e('Black Opacity', 'crm-lastposts'); ?></option>
                 <option value="postContainerGrow" <?php if($crm_effect == "postContainerGrow"){ echo "SELECTED"; } ?> ><?php _e('Image Grow', 'crm-lastposts'); ?></option>
                 <option value="postContainerShrink" <?php if($crm_effect == "postContainerShrink"){ echo "SELECTED"; } ?> ><?php _e('Image Shrink', 'crm-lastposts'); ?></option>
+                <option value="postContainerRotateText" <?php if($crm_effect == "postContainerRotateText"){ echo "SELECTED"; } ?> ><?php _e('Rotate Text', 'crm-lastposts'); ?></option>
             
             </select>
 			</p>

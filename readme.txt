@@ -1,26 +1,45 @@
 === Plugin Name ===
 Contributors: Cromorama
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=info%40cromorama%2ecom&lc=ES&item_name=CRM%20LastPosts%20Widget&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
-Tags: widget, last, posts, most, popular, random, últimos, posts, populares, aleatorios, image, imagen, mouseover, effect
+Tags: widget, last, posts, popular, random, últimos, ultimos, posts, populares, aleatorios, image, imagen, imágen, mouseover, effect, efecto, fade, grow, shrink
 Requires at least: 3.8
 Tested up to: 3.8
-Stable tag: 1.4.0
+Stable tag: 1.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Shows the last, most popular or random posts of any category you choose using a selected thumbnail image and different effects.
+Show the last, most popular or random posts of any category you choose using a selected thumbnail image and different effects.
 
 == Description ==
 
-Multilanguaje widget: EN / ES / FR
+CRM LastPosts Widget show the Last Posts, the Most Popular Posts and Random Posts in a visual way using the thumbnail image of every post with an effect. It shows the post title and date when you mousover the image. In the Popular Posts mode you can also see the post comments number.
 
-CRM LastPosts Widget shows the Last Posts, the Most Popular Posts and Random Posts in a visual way using the thumbnail of every post. It shows the post title and date when you mousover the image. In the Popular Posts mode you see the post number aswell.
+**Short By**
 
-Order by date, most popular posts or random order.
+* Date
+* Most Popular
+* Random
 
-Multiple image effects to choose: Fade to White, Fate to Black, Image Grow, Image Shrink (New effects very soon !!)
+You can choose also ASC or DESC mode
 
-Send your questions or bugs reports to: apps@cromorama.com
+**Effects**
+
+* Fade to White
+* Fade to Black
+* Image Grow
+* Image Shrink
+* Rotate Text Box
+
+New effects very soon !!
+
+**Languajes**
+
+* English en_US
+* Spanish es_ES
+* French fr_FR
+* Servian sr_RS by [Ogi Djuraskovic](http://firstsiteguide.com/)
+
+Do you want to help us to translate the widget?. [Contact Here](apps@cromorama.com)
 
 == Installation ==
 
@@ -35,11 +54,16 @@ Send your questions or bugs reports to: apps@cromorama.com
 
 == Changelog ==
 
+= 1.4.1 =
+
+* Added new languaje translation: Servian sr_RS by [Ogi Djuraskovic](http://firstsiteguide.com/)
+* Added new effect: Rotate Text Box
+
 = 1.4.0 =
 
 * Widget ready for WordPress 4.0 Update
-* Added new image effects: Black Opacity, Image Grow and Image Shrink (New effects soon !!)
-* Added an opctional text container
+* Added new image effects: Fade to Black, Image Grow and Image Shrink (New effects soon !!)
+* Added an optional text container
 * Minor CSS changes
 * New optimiced code
 * New defalut CSS classes for texts and text container
