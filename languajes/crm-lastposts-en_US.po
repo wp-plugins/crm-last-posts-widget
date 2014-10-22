@@ -1,0 +1,141 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CRM LastPosts Widget 1.4.0\n"
+"POT-Creation-Date: 2014-10-22 09:49-0000\n"
+"PO-Revision-Date: 2014-10-22 09:49-0000\n"
+"Last-Translator: Cromorama.com <apps@cromorama.com>\n"
+"Language-Team: Cromorama.com <apps@cromorama.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.10\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: crm-lastposts.php:28
+msgid "CRM LastPosts Widget"
+msgstr "CRM LastPosts Widget"
+
+#: crm-lastposts.php:30
+msgid ""
+"Shows the last, most popular or random posts of any category you choose "
+"using a selected thumbnail image and different effects."
+msgstr ""
+"Shows the last, most popular or random posts of any category you choose "
+"using a selected thumbnail image and different effects."
+
+#: crm-lastposts.php:138 crm-lastposts.php:161
+msgid "Title"
+msgstr "Title"
+
+#: crm-lastposts.php:139
+msgid "nposts"
+msgstr "3"
+
+#: crm-lastposts.php:140
+msgid "all"
+msgstr "all"
+
+#: crm-lastposts.php:141
+msgid "date"
+msgstr "date"
+
+#: crm-lastposts.php:166
+msgid "Posts Number"
+msgstr "Posts Number Calamares"
+
+#: crm-lastposts.php:170
+msgid "Category to show"
+msgstr "Category to show"
+
+#: crm-lastposts.php:173
+msgid "All Categories"
+msgstr "All Categories"
+
+#: crm-lastposts.php:186
+msgid "Order By"
+msgstr "Order By"
+
+#: crm-lastposts.php:194
+msgid "Date"
+msgstr "Date"
+
+#: crm-lastposts.php:195
+msgid "Most Popular"
+msgstr "Most Popular"
+
+#: crm-lastposts.php:196
+msgid "Random"
+msgstr "Random"
+
+#: crm-lastposts.php:204
+msgid "ASC"
+msgstr "ASC"
+
+#: crm-lastposts.php:205
+msgid "DESC"
+msgstr "DESC"
+
+#: crm-lastposts.php:213
+msgid "Effect"
+msgstr "Effect"
+
+#: crm-lastposts.php:216
+msgid "White Opacity"
+msgstr "White Opacity"
+
+#: crm-lastposts.php:217
+msgid "Black Opacity"
+msgstr "Black Opacity"
+
+#: crm-lastposts.php:218
+msgid "Image Grow"
+msgstr "Image Grow"
+
+#: crm-lastposts.php:219
+msgid "Image Shrink"
+msgstr "Image Shrink"
+
+#: crm-lastposts.php:220
+msgid "Rotate Text"
+msgstr "Rotate Text Box"
+
+#: crm-lastposts.php:226
+msgid "Thumbnail"
+msgstr "Thumbnail"
+
+#: crm-lastposts.php:233
+msgid "Activate Text Container"
+msgstr "Activate Text Container"
+
+#: crm-lastposts.php:235
+msgid "Click for active box"
+msgstr "Click for active box"
+
+#: crm-lastposts.php:239
+msgid "Post Text Container CSS Class"
+msgstr "Post Text Container CSS Class"
+
+#: crm-lastposts.php:248
+msgid "Post Title CSS Class"
+msgstr "Post Title CSS Class"
+
+#: crm-lastposts.php:253
+msgid "Post Date CSS Class"
+msgstr "Post Date CSS Class"
+
+#~ msgid "asc"
+#~ msgstr "asc"
+
+#~ msgid "medium"
+#~ msgstr "medium"
+
+#~ msgid "defaultTitle"
+#~ msgstr "defaultTitle"
+
+#~ msgid "defaultDate"
+#~ msgstr "defaultDate"
