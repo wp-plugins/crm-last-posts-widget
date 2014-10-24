@@ -27,6 +27,16 @@
 	margin-bottom:10px;
 }
 
+.relativePar{
+	position:relative;
+}
+
+.thumbHelpIcon{
+	position:absolute;
+	right:6px;
+	bottom:6px;
+}
+
 /* EFFECTS CONTAINER */
 
 	/* WHITE OPACITY */

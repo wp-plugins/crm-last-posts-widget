@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CRM LastPosts Widget 1.4.0\n"
-"POT-Creation-Date: 2014-10-22 09:49-0000\n"
-"PO-Revision-Date: 2014-10-22 09:50-0000\n"
+"POT-Creation-Date: 2014-10-24 10:27-0000\n"
+"PO-Revision-Date: 2014-10-24 10:27-0000\n"
 "Last-Translator: Cromorama.com <apps@cromorama.com>\n"
 "Language-Team: Cromorama.com <apps@cromorama.com>\n"
 "Language: es_ES\n"
@@ -45,89 +45,92 @@ msgstr "todo"
 msgid "date"
 msgstr "fecha"
 
-#: crm-lastposts.php:166
-msgid "Posts Number"
-msgstr "Número de Posts"
-
-#: crm-lastposts.php:170
+#: crm-lastposts.php:168
 msgid "Category to show"
 msgstr "Categoría a mostrar"
 
-#: crm-lastposts.php:173
+#: crm-lastposts.php:171
 msgid "All Categories"
 msgstr "Todas las Categorías"
 
-#: crm-lastposts.php:186
+#: crm-lastposts.php:183
+msgid "Posts Number"
+msgstr "Número de Posts"
+
+#: crm-lastposts.php:190
 msgid "Order By"
 msgstr "Ordenar Por"
 
-#: crm-lastposts.php:194
+#: crm-lastposts.php:198
 msgid "Date"
 msgstr "Fecha"
 
-#: crm-lastposts.php:195
+#: crm-lastposts.php:199
 msgid "Most Popular"
 msgstr "Más Popular"
 
-#: crm-lastposts.php:196
+#: crm-lastposts.php:200
 msgid "Random"
 msgstr "Aleatorio"
 
-#: crm-lastposts.php:204
+#: crm-lastposts.php:207
 msgid "ASC"
 msgstr "Ascendente"
 
-#: crm-lastposts.php:205
+#: crm-lastposts.php:208
 msgid "DESC"
 msgstr "Descendente"
 
-#: crm-lastposts.php:213
+#: crm-lastposts.php:216
 msgid "Effect"
 msgstr "Efecto"
 
-#: crm-lastposts.php:216
+#: crm-lastposts.php:219
 msgid "White Opacity"
 msgstr "Opacidad a Blanco"
 
-#: crm-lastposts.php:217
+#: crm-lastposts.php:220
 msgid "Black Opacity"
 msgstr "Opacidad a Negro"
 
-#: crm-lastposts.php:218
+#: crm-lastposts.php:221
 msgid "Image Grow"
 msgstr "Imágen que Crece"
 
-#: crm-lastposts.php:219
+#: crm-lastposts.php:222
 msgid "Image Shrink"
 msgstr "Imagen que Encoje"
 
-#: crm-lastposts.php:220
+#: crm-lastposts.php:223
 msgid "Rotate Text"
 msgstr "Caja de Texto que Rota"
 
-#: crm-lastposts.php:226
+#: crm-lastposts.php:229
 msgid "Thumbnail"
 msgstr "Thumbnail"
 
-#: crm-lastposts.php:233
-msgid "Activate Text Container"
-msgstr "Activar Contenedor"
-
-#: crm-lastposts.php:235
+#: crm-lastposts.php:236
 msgid "Click for active box"
-msgstr "Marcar para activar"
+msgstr "Marcar para activar la caja contenedor"
 
 #: crm-lastposts.php:239
-msgid "Post Text Container CSS Class"
-msgstr "Clase CSS del Contenedor"
+msgid "Advanced Options"
+msgstr "Opciones Avanzadas"
 
-#: crm-lastposts.php:248
+#: crm-lastposts.php:243
 msgid "Post Title CSS Class"
 msgstr "Clase CSS para el Título"
 
-#: crm-lastposts.php:253
+#: crm-lastposts.php:247
 msgid "Post Date CSS Class"
 msgstr "Clase CSS para la Fecha"
+
+#: crm-lastposts.php:250
+msgid "Post Text Container CSS Class"
+msgstr "Clase CSS del Contenedor"
+
+#~ msgid "Activate Text Container"
+#~ msgstr "Activar Contenedor"
 
 #~ msgid "asc"
 #~ msgstr "asc"
