@@ -4,18 +4,32 @@
 Plugin Name: CRM LastPosts Widget
 Plugin URI: http://www.cromorama.com/blog/crm-lastposts-widget
 Description: Shows the last, most popular or random posts of any category you choose using a selected thumbnail image and different effects.
-Version: 1.4.2
+Version: 1.4.3
 Author: Cromorama.com
 Author URI: http://www.cromorama.com
 */
+
+//Añadimos el archivo de funciones
+include_once('includes/functions.php');
 
 //Registramos el archivo CSS del Plugin
 function crm_css() {
 	wp_register_style('crmStyle', plugins_url( 'css/crm-lastposts.css' , __FILE__ ) );
 	wp_enqueue_style( 'crmStyle');
+	wp_register_style('crmColorCSS', plugins_url( 'css/spectrum/spectrum.css' , __FILE__ ) );
+	wp_enqueue_style( 'crmColorCSS');
 }
 add_action('wp_enqueue_scripts', 'crm_css');
 add_action('admin_enqueue_scripts', 'crm_css');
+
+//Resgistramos el JS para el Color Picker
+function crm_js() {
+	wp_enqueue_script('crmJSColor', plugins_url().'/crm-last-posts-widget/js/spectrum/spectrum.js');
+}
+add_action('admin_enqueue_scripts', 'crm_js');
+//add_action('wp_enqueue_scripts', 'crm_js');
+//add_action( 'admin_footer', 'crm_js' );
+
 
 //Creamos el WidGet
 class crm_lastposts extends WP_Widget {
@@ -42,9 +56,14 @@ class crm_lastposts extends WP_Widget {
 		$crm_effect = $instance['crm_effect'];
 		$crm_thumb = $instance['crm_thumb'];
 		$crm_text_container_class_activate = $instance['crm_text_container_class_activate'];
-		$crm_text_container_class = $instance['crm_text_container_class'];
-		$crm_title_class = $instance['crm_title_class'];
-		$crm_date_class = $instance['crm_date_class'];
+		$crm_title_color = $instance['crm_title_color'];
+		$crm_date_color = $instance['crm_date_color'];
+		$crm_posts_color = $instance['crm_posts_color'];
+		$crm_cont_color = $instance['crm_cont_color'];
+		$crm_title_size = $instance['crm_title_size'];
+		$crm_date_size = $instance['crm_date_size'];
+		$crm_posts_size = $instance['crm_posts_size'];
+		$crm_cont_opac = $instance['crm_cont_opac'];
 		
 		echo $args['before_widget'];
 		
@@ -80,16 +99,16 @@ class crm_lastposts extends WP_Widget {
 <?php
                                             if($crm_text_container_class_activate == 1){
 ?>
-                                                <div id="" class="<?php echo $crm_text_container_class; ?>">
+                                                <div id="" style="background-color:<?php echo $crm_cont_color; ?>;opacity:<?php echo $crm_cont_opac; ?>;" class="defaultBox">
 <?php
                                             }
 ?>                                   
-                                                    <h4 class="<?php echo $crm_title_class; ?>"><?php the_title(); ?></h4>
-                                                    <p class="<?php echo $crm_date_class; ?>"><?php echo get_the_date(); ?></p>
+                                                    <h4 style="color:<?php echo $crm_title_color; ?>;font-size:<?php echo $crm_title_size; ?>px;" class="defaultTitle"><?php the_title(); ?></h4>
+                                                    <p style="color:<?php echo $crm_date_color; ?>;font-size:<?php echo $crm_date_size; ?>px;" class="defaultDate"><?php echo get_the_date(); ?></p>
 <?php
                                                     if($crm_order == "comment_count"){
 ?>
-                                                        <p class="<?php echo $crm_date_class; ?>" style="margin-top:5px;"><?php echo comments_number(); ?></p>
+                                                        <p class=defaultNum" style="color:<?php echo $crm_posts_color; ?>;font-size:<?php echo $crm_posts_size; ?>px;"><?php echo comments_number(); ?></p>
 <?php
                                                     }
                                                 
@@ -143,9 +162,14 @@ class crm_lastposts extends WP_Widget {
 		if (isset($instance['crm_effect'])){ $crm_effect = $instance['crm_effect']; }else{ $crm_effect = "postContainerOpacity"; }
 		if (isset($instance['crm_thumb'])){	$crm_thumb = $instance['crm_thumb']; }else{ $crm_thumb = "medium"; }
 		if (isset($instance['crm_text_container_class_activate'])){ $crm_text_container_class_activate = $instance['crm_text_container_class_activate']; }else{ $crm_text_container_class_activate = 0; }
-		if (isset($instance['crm_text_container_class'])){ $crm_text_container_class = $instance['crm_text_container_class']; }else{ $crm_text_container_class = "defaultBox"; }
-		if (isset($instance['crm_title_class'])){ $crm_title_class = $instance['crm_title_class']; }else{ $crm_title_class = "defaultTitle"; }
-		if (isset($instance['crm_date_class'])){ $crm_date_class = $instance['crm_date_class']; }else{ $crm_date_class = "defaultDate"; }
+		if (isset($instance['crm_title_color'])){ $crm_title_color = $instance['crm_title_color']; }else{ $crm_title_color = "#FFF"; }
+		if (isset($instance['crm_date_color'])){ $crm_date_color = $instance['crm_date_color']; }else{ $crm_date_color = "#FFF"; }
+		if (isset($instance['crm_posts_color'])){ $crm_posts_color = $instance['crm_posts_color']; }else{ $crm_posts_color = "#FFF"; }
+		if (isset($instance['crm_cont_color'])){ $crm_cont_color = $instance['crm_cont_color']; }else{ $crm_cont_color = "#FFF"; }
+		if (isset($instance['crm_title_size'])){ $crm_title_size = $instance['crm_title_size']; }else{ $crm_title_size = "24"; }
+		if (isset($instance['crm_date_size'])){ $crm_date_size = $instance['crm_date_size']; }else{ $crm_date_size = "16"; }
+		if (isset($instance['crm_posts_size'])){ $crm_posts_size = $instance['crm_posts_size']; }else{ $crm_posts_size = "18"; }
+		if (isset($instance['crm_cont_opac'])){ $crm_cont_opac = $instance['crm_cont_opac']; }else{ $crm_cont_opac = "0.6"; }
 		
 		//Recuperacion de Categorias
 		$cat_args = array(
@@ -225,31 +249,65 @@ class crm_lastposts extends WP_Widget {
                 </select>
 			</p>
             
-            <p class="relativePar">
-                <label for="<?php echo $this->get_field_id( 'crm_thumb' ); ?>"><?php _e('Thumbnail', 'crm-lastposts'); ?>:</label>
-                <input class="widefat" id="<?php echo $this->get_field_id( 'crm_thumb' ); ?>" name="<?php echo $this->get_field_name( 'crm_thumb' ); ?>" type="text" value="<?php echo esc_attr( $crm_thumb ); ?>" />
-				
-				<a href="http://codex.wordpress.org/Function_Reference/add_image_size" target="_blank"><?php echo '<img src="' . plugins_url( 'img/help-icon.png' , __FILE__ ) . '" class="thumbHelpIcon"> '; ?></a>
+            <p>
+				<?php $sizes = get_image_sizes(); ?>
+                			
+				<label for="<?php echo $this->get_field_id( 'crm_thumb' ); ?>"><?php _e('Thumbnail', 'crm-lastposts'); ?>:</label>
+				<select class="widefat" id="<?php echo $this->get_field_id( 'crm_thumb' ); ?>" name="<?php echo $this->get_field_name( 'crm_thumb' ); ?>">
+
+					<?php foreach($sizes as $size => $name ){?>
+                    	<option value="<?php echo $size; ?>" <?php if($crm_thumb == $size){ echo "SELECTED"; } ?> ><?php echo $size; ?></option>
+                    <?php } ?>
+                
+				</select>
 			</p>
+            
+            <label for="<?php echo $this->get_field_id( 'crm_title_color' ); ?>"><?php _e('Customization Options', 'crm-lastposts'); ?>:</label> 
+			<hr />
+            
+            <table width="100%" border="0" cellspacing="8">
+            	<tr>
+                	<td width="50%" valign="top"><?php _e('Post Title', 'crm-lastposts'); ?>:</td>
+                	<td width="50%">
+                    	<input class="crmCPicker" type="color" id="<?php echo $this->get_field_id( 'crm_title_color' ); ?>" name="<?php echo $this->get_field_name( 'crm_title_color' );?>" value="<?php echo $crm_title_color; ?>"> <?php _e('Color', 'crm-lastposts'); ?>
+                        <br>
+                    	<input class="widefat crmSizer" id="<?php echo $this->get_field_id( 'crm_title_size' ); ?>" name="<?php echo $this->get_field_name( 'crm_title_size' ); ?>" type="text" value="<?php echo esc_attr( $crm_title_size ); ?>" /> <?php _e('Size (px)', 'crm-lastposts'); ?>
+                    </td>
+              	</tr>
+              	<tr>
+                	<td width="50%" valign="top"><?php _e('Post Date', 'crm-lastposts'); ?>:</td>
+                	<td width="50%">
+                    	<input class="color crmCPicker" type="color" id="<?php echo $this->get_field_id( 'crm_date_color' ); ?>" name="<?php echo $this->get_field_name( 'crm_date_color' );?>" value="<?php echo $crm_date_color; ?>"> <?php _e('Color', 'crm-lastposts'); ?>
+                    	<br>
+                    	<input class="widefat crmSizer" id="<?php echo $this->get_field_id( 'crm_date_size' ); ?>" name="<?php echo $this->get_field_name( 'crm_date_size' ); ?>" type="text" value="<?php echo esc_attr( $crm_date_size ); ?>" /> <?php _e('Size (px)', 'crm-lastposts'); ?>
+                    </td>
+              	</tr>
+              	<tr>
+                	<td width="50%" valign="top"><?php _e('Posts Num Color', 'crm-lastposts'); ?>:</td>
+                	<td width="50%">
+                    	<input class="color crmCPicker" type="color" id="<?php echo $this->get_field_id( 'crm_posts_color' ); ?>" name="<?php echo $this->get_field_name( 'crm_posts_color' );?>" value="<?php echo $crm_posts_color; ?>"> <?php _e('Color', 'crm-lastposts'); ?>
+                        <br>
+                    	<input class="widefat crmSizer" id="<?php echo $this->get_field_id( 'crm_posts_size' ); ?>" name="<?php echo $this->get_field_name( 'crm_posts_size' ); ?>" type="text" value="<?php echo esc_attr( $crm_posts_size ); ?>" /> <?php _e('Size (px)', 'crm-lastposts'); ?>
+                    </td>
+              	</tr>
+            </table>
             
             <p>
             	<input type="checkbox" name="<?php echo $this->get_field_name( 'crm_text_container_class_activate' ); ?>" value="1" <?php if($crm_text_container_class_activate == 1)echo "checked"; ?> > <?php _e('Click for active box', 'crm-lastposts'); ?>
-            </p>
-                
-            <label for="<?php echo $this->get_field_id( 'crm_title_class' ); ?>"><?php _e('Advanced Options', 'crm-lastposts'); ?>:</label> 
-			<hr />
+            </p>    
             
-            <p>
-                <label for="<?php echo $this->get_field_id( 'crm_title_class' ); ?>"><?php _e('Post Title CSS Class', 'crm-lastposts'); ?>:</label> 
-                <input class="widefat" id="<?php echo $this->get_field_id( 'crm_title_class' ); ?>" name="<?php echo $this->get_field_name( 'crm_title_class' ); ?>" type="text" value="<?php echo esc_attr( $crm_title_class ); ?>" />
-            </p>
-            <p>
-                <label for="<?php echo $this->get_field_id( 'crm_date_class' ); ?>"><?php _e('Post Date CSS Class', 'crm-lastposts'); ?>:</label> 
-                <input class="widefat" id="<?php echo $this->get_field_id( 'crm_date_class' ); ?>" name="<?php echo $this->get_field_name( 'crm_date_class' ); ?>" type="text" value="<?php echo esc_attr( $crm_date_class ); ?>" />
-        	</p>
-                <label for="<?php echo $this->get_field_id( 'crm_text_container_class' ); ?>"><?php _e('Post Text Container CSS Class', 'crm-lastposts'); ?>:</label> 
-                <input class="widefat" id="<?php echo $this->get_field_id( 'crm_text_container_class' ); ?>" name="<?php echo $this->get_field_name( 'crm_text_container_class' ); ?>" type="text" value="<?php echo esc_attr( $crm_text_container_class ); ?>" />
-            <p>
+            
+            <table width="100%" border="0" cellspacing="8">
+            	<tr>
+                	<td width="50%" valign="top"><?php _e('Box', 'crm-lastposts'); ?>:</td>
+                	<td width="50%">
+                    	<input class="color crmCPicker" type="color" id="<?php echo $this->get_field_id( 'crm_cont_color' ); ?>" name="<?php echo $this->get_field_name( 'crm_cont_color' );?>" value="<?php echo $crm_cont_color; ?>"> <?php _e('Color', 'crm-lastposts'); ?>
+                    	<br>
+                    	<input class="widefat crmSizer" id="<?php echo $this->get_field_id( 'crm_cont_opac' ); ?>" name="<?php echo $this->get_field_name( 'crm_cont_opac' ); ?>" type="text" value="<?php echo esc_attr( $crm_cont_opac ); ?>" /> <?php _e('Opacity (0 to 1)', 'crm-lastposts'); ?>
+                    </td>
+              	</tr>
+            </table>
+
 <?php 
 		}
 		
@@ -265,9 +323,14 @@ class crm_lastposts extends WP_Widget {
 			$instance['crm_effect'] = ( ! empty( $new_instance['crm_effect'] ) ) ? strip_tags( $new_instance['crm_effect'] ) : '';
 			$instance['crm_thumb'] = ( ! empty( $new_instance['crm_thumb'] ) ) ? strip_tags( $new_instance['crm_thumb'] ) : '';
 			$instance['crm_text_container_class_activate'] = ( ! empty( $new_instance['crm_text_container_class_activate'] ) ) ? strip_tags( $new_instance['crm_text_container_class_activate'] ) : '';
-			$instance['crm_text_container_class'] = ( ! empty( $new_instance['crm_text_container_class'] ) ) ? strip_tags( $new_instance['crm_text_container_class'] ) : '';
-			$instance['crm_title_class'] = ( ! empty( $new_instance['crm_title_class'] ) ) ? strip_tags( $new_instance['crm_title_class'] ) : '';
-			$instance['crm_date_class'] = ( ! empty( $new_instance['crm_date_class'] ) ) ? strip_tags( $new_instance['crm_date_class'] ) : '';
+			$instance['crm_title_color'] = ( ! empty( $new_instance['crm_title_color'] ) ) ? strip_tags( $new_instance['crm_title_color'] ) : '';
+			$instance['crm_date_color'] = ( ! empty( $new_instance['crm_date_color'] ) ) ? strip_tags( $new_instance['crm_date_color'] ) : '';
+			$instance['crm_posts_color'] = ( ! empty( $new_instance['crm_posts_color'] ) ) ? strip_tags( $new_instance['crm_posts_color'] ) : '';
+			$instance['crm_cont_color'] = ( ! empty( $new_instance['crm_cont_color'] ) ) ? strip_tags( $new_instance['crm_cont_color'] ) : '';
+			$instance['crm_title_size'] = ( ! empty( $new_instance['crm_title_size'] ) ) ? strip_tags( $new_instance['crm_title_size'] ) : '';
+			$instance['crm_date_size'] = ( ! empty( $new_instance['crm_date_size'] ) ) ? strip_tags( $new_instance['crm_date_size'] ) : '';
+			$instance['crm_posts_size'] = ( ! empty( $new_instance['crm_posts_size'] ) ) ? strip_tags( $new_instance['crm_posts_size'] ) : '';
+			$instance['crm_cont_opac'] = ( ! empty( $new_instance['crm_cont_opac'] ) ) ? strip_tags( $new_instance['crm_cont_opac'] ) : '';
 		return $instance;
 	
 	}

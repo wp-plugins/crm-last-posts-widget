@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=info%
 Tags: widget, last, posts, popular, random, últimos, ultimos, posts, populares, aleatorios, image, imagen, imágen, mouseover, effect, efecto, fade, grow, shrink
 Requires at least: 3.8
 Tested up to: 3.8
-Stable tag: 1.4.2
+Stable tag: 1.4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,12 @@ Do you want to help us to translate the widget?. [Contact Here](apps@cromorama.c
 2. Image of the widget running.
 
 == Changelog ==
+
+= 1.4.3 =
+
+* IMPORTANT: Custom CSS Class option removed
+* New customization options
+* Now shows all the thumbnails available in the theme
 
 = 1.4.2 =
 

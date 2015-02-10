@@ -218,6 +218,21 @@
 	   transition-delay: 0.2s;
 	}
 
+/* COLOR PICKER */
+
+.crmCPicker{
+	border:0;
+}
+
+.crmSizer{
+	width:64px;
+    font-size: 12px;
+    height: 20px;
+    margin-left: 1px;
+    text-align: right;
+}
+
+
 /* TEXTS */
 
 .defaultBox{
@@ -239,6 +254,11 @@
 .defaultDate{
 	color:#FFF;
 	margin:0;
+}
+
+.defaultNum{
+	color:#FFF;
+	margin-top:5px
 }
 
 .text {
