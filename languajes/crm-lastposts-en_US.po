@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: CRM LastPosts Widget 1.4.3\n"
-"POT-Creation-Date: 2015-02-10 13:05+0100\n"
-"PO-Revision-Date: 2015-02-10 13:06+0100\n"
+"Project-Id-Version: CRM LastPosts Widget 1.4.0\n"
+"POT-Creation-Date: 2015-02-11 08:57+0100\n"
+"PO-Revision-Date: 2015-02-11 08:57+0100\n"
 "Last-Translator: Cromorama.com <apps@cromorama.com>\n"
 "Language-Team: Cromorama.com <apps@cromorama.com>\n"
 "Language: en_US\n"
@@ -119,7 +119,7 @@ msgstr "Post Title"
 #: crm-lastposts.php:272 crm-lastposts.php:280 crm-lastposts.php:288
 #: crm-lastposts.php:304
 msgid "Color"
-msgstr "Colour"
+msgstr "Color"
 
 #: crm-lastposts.php:274 crm-lastposts.php:282 crm-lastposts.php:290
 msgid "Size (px)"

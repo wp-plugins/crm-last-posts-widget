@@ -1,18 +1,18 @@
 === Plugin Name ===
 Contributors: Cromorama
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=info%40cromorama%2ecom&lc=ES&item_name=CRM%20LastPosts%20Widget&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
-Tags: widget, last, posts, popular, random, últimos, ultimos, posts, populares, aleatorios, image, imagen, imágen, mouseover, effect, efecto, fade, grow, shrink
+Tags: widget, last, posts, popular, random, últimos, ultimos, posts, populares, aleatorios, image, imagen, imágen, mouseover, effect, efecto, fade, grow, shrink, personalization, personalización, custom, thumbnail
 Requires at least: 3.8
 Tested up to: 3.8
-Stable tag: 1.4.3
+Stable tag: 1.4.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Show the last, most popular or random posts of any category you choose using a selected thumbnail image and different effects.
+Show the last, most popular or random posts of any category using a selected thumbnail image and different effects.
 
 == Description ==
 
-CRM LastPosts Widget show the Last Posts, the Most Popular Posts and Random Posts in a visual way using the thumbnail image of every post with an effect. It shows the post title and date when you mousover the image. In the Popular Posts mode you can also see the post comments number.
+CRM LastPosts Widget show the **Last Posts**, the **Most Popular Posts** and **Random Posts** in a visual way using the thumbnail image of every post with an effect. It shows the post title and date when you mousover the image. In the Popular Posts mode you can also see the post comments number.
 
 **Short By**
 
@@ -20,7 +20,7 @@ CRM LastPosts Widget show the Last Posts, the Most Popular Posts and Random Post
 * Most Popular
 * Random
 
-You can choose also ASC or DESC mode
+* Also ASC or DESC mode available
 
 **Effects**
 
@@ -30,7 +30,7 @@ You can choose also ASC or DESC mode
 * Image Shrink
 * Rotate Text Box
 
-New effects very soon !!
+* New effects very soon !!
 
 **Languajes**
 
@@ -39,7 +39,11 @@ New effects very soon !!
 * French fr_FR
 * Servian sr_RS by [Ogi Djuraskovic](http://firstsiteguide.com/)
 
-Do you want to help us to translate the widget?. [Contact Here](apps@cromorama.com)
+* Do you want to help us to translate the widget?. [Contact Here](http://www.cromorama.com/)
+
+**Who are we?**
+
+[youtube https://www.youtube.com/watch?v=7Ev8NwsPFLo]
 
 == Installation ==
 
@@ -53,6 +57,11 @@ Do you want to help us to translate the widget?. [Contact Here](apps@cromorama.c
 2. Image of the widget running.
 
 == Changelog ==
+
+= 1.4.4 =
+
+* Minor bux fixed
+* Languajes update
 
 = 1.4.3 =
 

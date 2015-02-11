@@ -4,7 +4,7 @@
 Plugin Name: CRM LastPosts Widget
 Plugin URI: http://www.cromorama.com/blog/crm-lastposts-widget
 Description: Shows the last, most popular or random posts of any category you choose using a selected thumbnail image and different effects.
-Version: 1.4.3
+Version: 1.4.4
 Author: Cromorama.com
 Author URI: http://www.cromorama.com
 */
@@ -27,9 +27,6 @@ function crm_js() {
 	wp_enqueue_script('crmJSColor', plugins_url().'/crm-last-posts-widget/js/spectrum/spectrum.js');
 }
 add_action('admin_enqueue_scripts', 'crm_js');
-//add_action('wp_enqueue_scripts', 'crm_js');
-//add_action( 'admin_footer', 'crm_js' );
-
 
 //Creamos el WidGet
 class crm_lastposts extends WP_Widget {

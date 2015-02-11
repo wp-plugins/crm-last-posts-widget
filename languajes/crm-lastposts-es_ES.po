@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CRM LastPosts Widget 1.4.0\n"
-"POT-Creation-Date: 2015-02-10 13:06+0100\n"
-"PO-Revision-Date: 2015-02-10 13:07+0100\n"
+"POT-Creation-Date: 2015-02-11 08:59+0100\n"
+"PO-Revision-Date: 2015-02-11 08:59+0100\n"
 "Last-Translator: Cromorama.com <apps@cromorama.com>\n"
 "Language-Team: Cromorama.com <apps@cromorama.com>\n"
 "Language: es_ES\n"
@@ -144,7 +144,7 @@ msgstr "Caja"
 
 #: crm-lastposts.php:306
 msgid "Opacity (0 to 1)"
-msgstr "Opacidad (0 a 1)"
+msgstr "Opacidad (0 to 1)"
 
 #~ msgid "Advanced Options"
 #~ msgstr "Opciones Avanzadas"
