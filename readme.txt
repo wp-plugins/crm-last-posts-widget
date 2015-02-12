@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=info%
 Tags: widget, last, posts, popular, random, últimos, ultimos, posts, populares, aleatorios, image, imagen, imágen, mouseover, effect, efecto, fade, grow, shrink, personalization, personalización, custom, thumbnail
 Requires at least: 3.8
 Tested up to: 3.8
-Stable tag: 1.4.4
+Stable tag: 1.4.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,6 +13,10 @@ Show the last, most popular or random posts of any category using a selected thu
 == Description ==
 
 CRM LastPosts Widget show the **Last Posts**, the **Most Popular Posts** and **Random Posts** in a visual way using the thumbnail image of every post with an effect. It shows the post title and date when you mousover the image. In the Popular Posts mode you can also see the post comments number.
+
+Colors, text sizes and other **customizable** aspects from the widget. It is not necessary to have knowledge of CSS. (More customizable settings in next versions)
+
+If you have any problems using this widget post it on the [Support Forum](https://wordpress.org/support/plugin/crm-last-posts-widget) and we will be glad to help you.
 
 **Short By**
 
@@ -58,6 +62,17 @@ CRM LastPosts Widget show the **Last Posts**, the **Most Popular Posts** and **R
 
 == Changelog ==
 
+= 1.4.6 =
+
+* Color Picker from WP Api
+* New Widget customization interface
+* Box opacity now RGB
+* Languajes update
+
+= 1.4.5 =
+
+* Minor CSS bug fixed
+
 = 1.4.4 =
 
 * Minor bux fixed
@@ -88,66 +103,3 @@ CRM LastPosts Widget show the **Last Posts**, the **Most Popular Posts** and **R
 * Minor CSS changes
 * New optimiced code
 * New defalut CSS classes for texts and text container
-
-= 1.3.5 =
-
-* Widget ready for WordPress 3.9 Update
-
-= 1.3.4 =
-
-* Minor bug fixed
-
-= 1.3.3 =
-
-* Added multilingual feature with EN / ES / FR so far.
-
-= 1.3.2 =
-
-* CSS style added to administration.
-
-= 1.3.1 =
-
-* Added shorts ASC (down to up) and DESC (up to down) to order your posts in the way you like.
-
-= 1.3.0 =
-
-* Added short by date (default mode), most popular posts or random posts.
-* Improved CSS for a correct vertical align.
-
-= 1.2.9 =
-
-* Fixed Critical Faliure
-
-= 1.2.8 =
-
-* Changed some screenshots
-* CSS problem fixed
-
-= 1.2.7 =
-
-* Added option to show all the posts no matter the category.
-* Translated support text to English
-
-= 1.2.6 =
-
-* Minor bug fixed
-
-= 1.2.5 =
-
-* Minor bug fixed
-
-= 1.2.4 =
-
-* New CSS Class
-
-= 1.2.3 =
-
-* Minor bug fixed
-
-= 1.2.2 =
-
-* Open Beta Version.
-
-= 1.0 =
-
-* Beta Version.

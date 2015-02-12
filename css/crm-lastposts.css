@@ -1,5 +1,5 @@
 /* Estilos Cromorama LastPosts */
-/* Versión 1.4.0 - 16|10|2014 */
+/* Versión 1.4.5 - 12|02|2015 */
 
 /* ADMIN LAYOUT */
 
@@ -218,10 +218,26 @@
 	   transition-delay: 0.2s;
 	}
 
-/* COLOR PICKER */
+.crmCustomContainer{
+	background-color:#E8E8E8;
+	padding:10px;
+	border:1px solid #D4D4D4;
+	overflow: auto;
+}
 
-.crmCPicker{
-	border:0;
+.crmCustomContainer p{
+	margin:0;
+}
+
+.crmCustomTitlesLeft{
+	width:30%;
+	float:left;
+}
+
+.crmCustomTitlesRight{
+	width:70%;
+	float:left;
+	text-align:right;
 }
 
 .crmSizer{
@@ -232,6 +248,9 @@
     text-align: right;
 }
 
+.crmSeparator{
+	height:20px;
+}
 
 /* TEXTS */
 
@@ -253,12 +272,12 @@
 
 .defaultDate{
 	color:#FFF;
-	margin:0;
+	margin:0 !important;
 }
 
 .defaultNum{
 	color:#FFF;
-	margin-top:5px
+	margin:5px 0 0 !important;
 }
 
 .text {
