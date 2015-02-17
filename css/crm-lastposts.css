@@ -228,12 +228,12 @@
 }
 
 .crmCustomTitlesLeft{
-	width:30%;
+	width:50%;
 	float:left;
 }
 
 .crmCustomTitlesRight{
-	width:70%;
+	width:50%;
 	float:left;
 	text-align:right;
 }

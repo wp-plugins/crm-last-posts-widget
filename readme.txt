@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=info%
 Tags: widget, last, posts, popular, random, últimos, ultimos, posts, populares, aleatorios, image, imagen, imágen, mouseover, effect, efecto, fade, grow, shrink, personalization, personalización, custom, thumbnail
 Requires at least: 3.8
 Tested up to: 3.8
-Stable tag: 1.4.7
+Stable tag: 1.4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,10 @@ If you have any problems using this widget post it on the [Support Forum](https:
 2. Image of the widget running.
 
 == Changelog ==
+
+= 1.4.8 =
+
+* CSS Bug Fixed
 
 = 1.4.7 =
 
