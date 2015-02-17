@@ -31,10 +31,8 @@
 	position:relative;
 }
 
-.thumbHelpIcon{
-	position:absolute;
-	right:6px;
-	bottom:6px;
+.crmCustomTopsText{
+	margin-bottom:0;
 }
 
 /* EFFECTS CONTAINER */

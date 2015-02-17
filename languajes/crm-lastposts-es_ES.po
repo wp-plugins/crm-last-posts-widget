@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CRM LastPosts Widget 1.4.0\n"
-"POT-Creation-Date: 2015-02-12 10:27+0100\n"
-"PO-Revision-Date: 2015-02-12 10:27+0100\n"
+"POT-Creation-Date: 2015-02-17 10:24+0100\n"
+"PO-Revision-Date: 2015-02-17 10:24+0100\n"
 "Last-Translator: Cromorama.com <apps@cromorama.com>\n"
 "Language-Team: Cromorama.com <apps@cromorama.com>\n"
 "Language: es_ES\n"
@@ -16,11 +16,11 @@ msgstr ""
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: crm-lastposts.php:43
+#: crm-lastposts.php:39
 msgid "CRM LastPosts Widget"
 msgstr "CRM LastPosts Widget"
 
-#: crm-lastposts.php:45
+#: crm-lastposts.php:41
 msgid ""
 "Shows the last, most popular or random posts of any category you choose "
 "using a selected thumbnail image and different effects."
@@ -29,117 +29,118 @@ msgstr ""
 "cualquier categoría usando una imágen de thumbnail preseleccionada con "
 "diferentes efectos."
 
-#: crm-lastposts.php:158 crm-lastposts.php:186
+#: crm-lastposts.php:163 crm-lastposts.php:196
 msgid "Title"
 msgstr "Título"
 
-#: crm-lastposts.php:159
+#: crm-lastposts.php:164
 msgid "nposts"
 msgstr "3"
 
-#: crm-lastposts.php:160
+#: crm-lastposts.php:165
 msgid "all"
 msgstr "todo"
 
-#: crm-lastposts.php:161
+#: crm-lastposts.php:166
 msgid "date"
 msgstr "fecha"
 
-#: crm-lastposts.php:193
+#: crm-lastposts.php:203
 msgid "Category to show"
 msgstr "Categoría a mostrar"
 
-#: crm-lastposts.php:196
+#: crm-lastposts.php:206
 msgid "All Categories"
 msgstr "Todas las Categorías"
 
-#: crm-lastposts.php:208
+#: crm-lastposts.php:217
 msgid "Posts Number"
 msgstr "Número de Posts"
 
-#: crm-lastposts.php:215
+#: crm-lastposts.php:224
 msgid "Order By"
 msgstr "Ordenar Por"
 
-#: crm-lastposts.php:223
+#: crm-lastposts.php:232
 msgid "Date"
 msgstr "Fecha"
 
-#: crm-lastposts.php:224
+#: crm-lastposts.php:233
 msgid "Most Popular"
 msgstr "Más Popular"
 
-#: crm-lastposts.php:225
+#: crm-lastposts.php:234
 msgid "Random"
 msgstr "Aleatorio"
 
-#: crm-lastposts.php:232
+#: crm-lastposts.php:241
 msgid "ASC"
 msgstr "Ascendente"
 
-#: crm-lastposts.php:233
+#: crm-lastposts.php:242
 msgid "DESC"
 msgstr "Descendente"
 
-#: crm-lastposts.php:241
+#: crm-lastposts.php:250
 msgid "Effect"
 msgstr "Efecto"
 
-#: crm-lastposts.php:244
+#: crm-lastposts.php:253
 msgid "White Opacity"
 msgstr "Opacidad a Blanco"
 
-#: crm-lastposts.php:245
+#: crm-lastposts.php:254
 msgid "Black Opacity"
 msgstr "Opacidad a Negro"
 
-#: crm-lastposts.php:246
+#: crm-lastposts.php:255
 msgid "Image Grow"
 msgstr "Imágen que Crece"
 
-#: crm-lastposts.php:247
+#: crm-lastposts.php:256
 msgid "Image Shrink"
 msgstr "Imagen que Encoje"
 
-#: crm-lastposts.php:248
+#: crm-lastposts.php:257
 msgid "Rotate Text"
 msgstr "Caja de Texto que Rota"
 
-#: crm-lastposts.php:256
+#: crm-lastposts.php:265
 msgid "Thumbnail"
 msgstr "Thumbnail"
 
-#: crm-lastposts.php:266
+#: crm-lastposts.php:275
 msgid "Customization Options"
 msgstr "Opciones de Personalización"
 
-#: crm-lastposts.php:269
+#: crm-lastposts.php:279
 msgid "Post Title"
 msgstr "Título del Post"
 
-#: crm-lastposts.php:272 crm-lastposts.php:279 crm-lastposts.php:285
-msgid "Size (px)"
-msgstr "Tamaño (px)"
-
-#: crm-lastposts.php:276
-msgid "Post Date"
-msgstr "Fecha del Post"
-
-#: crm-lastposts.php:282
-msgid "Posts Num Color"
-msgstr "Número de Comentarios"
-
-#: crm-lastposts.php:290
-msgid "Box"
-msgstr "Caja"
-
-#: crm-lastposts.php:293
+#: crm-lastposts.php:282 crm-lastposts.php:293 crm-lastposts.php:304
+#: crm-lastposts.php:316
 msgid "Check to activate"
 msgstr "Marcar para activar"
 
-#: crm-lastposts.php:297
+#: crm-lastposts.php:286 crm-lastposts.php:297 crm-lastposts.php:308
+msgid "Size (px)"
+msgstr "Tamaño (px)"
+
+#: crm-lastposts.php:290
+msgid "Post Date"
+msgstr "Fecha del Post"
+
+#: crm-lastposts.php:301
+msgid "Posts Num Color"
+msgstr "Número de Comentarios"
+
+#: crm-lastposts.php:313
+msgid "Box"
+msgstr "Caja"
+
+#: crm-lastposts.php:320
 msgid "Opacity (0 to 1)"
-msgstr "Opacidad (0 to 1)"
+msgstr "Opacidad (0 a 1)"
 
 #~ msgid "Color"
 #~ msgstr "Color"
