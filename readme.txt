@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=info%
 Tags: widget, last, posts, popular, random, últimos, ultimos, posts, populares, aleatorios, image, imagen, imágen, mouseover, effect, efecto, fade, grow, shrink, personalization, personalización, custom, thumbnail
 Requires at least: 3.8
 Tested up to: 3.8
-Stable tag: 1.4.8
+Stable tag: 1.4.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,30 +20,30 @@ If you have any problems using this widget post it on the [Support Forum](https:
 
 **Short By**
 
-* Date
-* Most Popular
-* Random
+>* Date
+>* Most Popular
+>* Random
 
-* Also ASC or DESC mode available
+>* Also ASC or DESC mode available
 
 **Effects**
 
-* Fade to White
-* Fade to Black
-* Image Grow
-* Image Shrink
-* Rotate Text Box
+>* Fade to White
+>* Fade to Black
+>* Image Grow
+>* Image Shrink
+>* Rotate Text Box
 
-* New effects very soon !!
+>* New effects very soon !!
 
 **Languajes**
 
-* English en_US
-* Spanish es_ES
-* French fr_FR
-* Servian sr_RS by [Ogi Djuraskovic](http://firstsiteguide.com/)
+>* English en_US
+>* Spanish es_ES
+>* French fr_FR
+>* Servian sr_RS by [Ogi Djuraskovic](http://firstsiteguide.com/)
 
-* Do you want to help us to translate the widget?. [Contact Here](http://www.cromorama.com/)
+>* Do you want to help us to translate the widget?. [Contact Here](http://www.cromorama.com/)
 
 **Who are we?**
 
@@ -61,6 +61,10 @@ If you have any problems using this widget post it on the [Support Forum](https:
 2. Image of the widget running.
 
 == Changelog ==
+
+= 1.4.9 =
+
+* Layout changes
 
 = 1.4.8 =
 
