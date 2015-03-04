@@ -1,10 +1,10 @@
 === Plugin Name ===
 Contributors: Cromorama
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=info%40cromorama%2ecom&lc=ES&item_name=CRM%20LastPosts%20Widget&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
-Tags: widget, last, posts, popular, random, últimos, ultimos, posts, populares, aleatorios, image, imagen, imágen, mouseover, effect, efecto, fade, grow, shrink, personalization, personalización, custom, thumbnail
+Tags: widget, last, posts, popular, random, últimos, ultimos, posts, populares, aleatorios, image, imagen, imágen, mouseover, effect, efecto, fade, grow, shrink, personalization, personalización, custom, thumbnail, mouseover
 Requires at least: 3.8
 Tested up to: 3.8
-Stable tag: 1.4.9
+Stable tag: 1.4.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,21 +12,17 @@ Show the last, most popular or random posts of any category using a selected thu
 
 == Description ==
 
-CRM LastPosts Widget show the **Last Posts**, the **Most Popular Posts** and **Random Posts** in a visual way using the thumbnail image of every post with an effect. It shows the post title and date when you mousover the image. In the Popular Posts mode you can also see the post comments number.
-
-Colors, text sizes and other **customizable** aspects from the widget. It is not necessary to have knowledge of CSS. (More customizable settings in next versions)
+CRM LastPosts Widget shows the **Last Posts**, **Most Popular Posts** and **Random Posts** in a visual way using the thumbnail image of every post with an effect. Colors, text sizes and other **customizable** aspects from the widget. It is not necessary to have any CSS knowledge. (More customizable settings in next versions)
 
 If you have any problems using this widget post it on the [Support Forum](https://wordpress.org/support/plugin/crm-last-posts-widget) and we will be glad to help you.
 
-**Short By**
+**Short By** / Also ASC or DESC mode available
 
 >* Date
 >* Most Popular
 >* Random
 
->* Also ASC or DESC mode available
-
-**Effects**
+**Effects** / New effects very soon !!
 
 >* Fade to White
 >* Fade to Black
@@ -34,16 +30,12 @@ If you have any problems using this widget post it on the [Support Forum](https:
 >* Image Shrink
 >* Rotate Text Box
 
->* New effects very soon !!
-
-**Languajes**
+**Languajes** / Do you want to help us to translate the widget?. [Contact Here](http://www.cromorama.com/)
 
 >* English en_US
 >* Spanish es_ES
 >* French fr_FR
 >* Servian sr_RS by [Ogi Djuraskovic](http://firstsiteguide.com/)
-
->* Do you want to help us to translate the widget?. [Contact Here](http://www.cromorama.com/)
 
 **Who are we?**
 
@@ -51,9 +43,30 @@ If you have any problems using this widget post it on the [Support Forum](https:
 
 == Installation ==
 
-1. Upload the crm-lastposts folder to Plugins folder of your WordPress.
-2. Activate widget from plugins page.
-3. Configurate your widget and enjoy it!.
+**From your WordPress Instalation**
+
+1. Go to the **Plugins** section in your backend menú.
+2. Go to **Add New** and look in the search engine for **CRM LastPosts**.
+3. Click **Install** button.
+4. Activate widget from plugins page.
+5. Configurate the widget and enjoy it!.
+
+**Downloading from WordPress Plugins Website** Version 1
+
+1. Donwload the pluging from the **CRM LastPosts Widget WordPress repository page**.
+2. Go to the **Plugins** section in your backend menu.
+3. Go to **Add New** and click in the **Upload Plugin** button.
+4. Look for the plugin's zip file you downloaded and click in **Install Now**.
+5. Activate widget from plugins page.
+6. Configurate the widget and enjoy it!.
+
+**Downloading from WordPress Plugins Website** Version 2
+
+1. Donwload the pluging from the **CRM LastPosts Widget WordPress repository page**.
+2. Unzip the file you downloaded.
+3. Upload the plugins folder to your websites hosting via FTP to the **wp-content->plugins** directory.
+4. Activate widget from plugins page.
+5. Configurate the widget and enjoy it!.
 
 == Screenshots ==
 
@@ -61,6 +74,12 @@ If you have any problems using this widget post it on the [Support Forum](https:
 2. Image of the widget running.
 
 == Changelog ==
+
+= 1.4.10 =
+
+* Added jQuery UI slider buttons
+* Layout changes
+* Minor CSS changes
 
 = 1.4.9 =
 

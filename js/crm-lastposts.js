@@ -1,16 +1,22 @@
 // Cromorama.com
-// 12-02-2015 // Last Update: 16-02-2015
+// 12-02-2015 // Last Update: 04-03-2015
 // CRM LastPosts Widget
 
 
 jQuery(document).ready(function($) {
+
 	jQuery('#widgets-right .crm-color-picker, .inactive-sidebar .crm-color-picker').wpColorPicker();
 	runChecks();
+	sliderButtons();
+	
 }).ajaxSuccess(function(e, xhr, settings) {
+
 	if(settings.data.search('action=save-widget') != -1 && settings.data.search('id_base=crm_lastposts') != -1) {  
 		jQuery('#widgets-right .crm-color-picker, .inactive-sidebar .crm-color-picker').wpColorPicker();
 		runChecks();
+		sliderButtons();
 	}
+
 });
 
 function runChecks(){
@@ -55,4 +61,54 @@ function runChecks(){
 		jQuery('.boxCheckContainer').toggle("slow");
 	});
 	
+};
+
+
+function sliderButtons(){
+
+	jQuery('.slButtonTitle').slider({
+		range: "min",
+    	orientation:'horizontal',
+        min: 5,
+        max: 60,
+        value:slTitleValue,
+        slide: function( event, ui ) {
+        	jQuery('.slTitle').val( ui.value );
+        }	
+	});
+	
+	jQuery('.slButtonDate').slider({
+		range: "min",
+    	orientation:'horizontal',
+        min: 5,
+        max: 60,
+        value:slDateValue,
+        slide: function( event, ui ) {
+        	jQuery('.slDate').val( ui.value );
+        }	
+	});
+
+	jQuery('.slButtonComments').slider({
+		range: "min",
+    	orientation:'horizontal',
+        min: 5,
+        max: 60,
+        value:slCommentsValue,
+        slide: function( event, ui ) {
+        	jQuery('.slComments').val( ui.value );
+        }	
+	});
+	
+	jQuery('.slButtonBoxOpacity').slider({
+		range: "min",
+    	orientation:'horizontal',
+		step: 0.1,
+        min: 0.1,
+        max: 1,
+        value:slOpacityValue,
+        slide: function( event, ui ) {
+        	jQuery('.slBoxOpacity').val( ui.value );
+        }	
+	});
+
 };

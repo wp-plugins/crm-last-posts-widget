@@ -4,7 +4,7 @@
 Plugin Name: CRM LastPosts Widget
 Plugin URI: http://www.cromorama.com/blog/crm-lastposts-widget
 Description: Shows the last, most popular or random posts of any category you choose using a selected thumbnail image and different effects.
-Version: 1.4.9
+Version: 1.4.10
 Author: Cromorama.com
 Author URI: http://www.cromorama.com
 */
@@ -17,6 +17,9 @@ function crm_css() {
 	wp_register_style('crmStyle', plugins_url( 'css/crm-lastposts.css' , __FILE__ ) );
 	wp_enqueue_style('crmStyle');
 	wp_enqueue_style('wp-color-picker');
+	
+	wp_register_style('crmStyleUI', 'http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css');
+	wp_enqueue_style('crmStyleUI');
 }
 add_action('wp_enqueue_scripts', 'crm_css');
 add_action('admin_enqueue_scripts', 'crm_css');
@@ -25,6 +28,8 @@ add_action('admin_enqueue_scripts', 'crm_css');
 function crm_js() {
 	wp_enqueue_script('wp-color-picker');
 	wp_enqueue_script('cpa_custom_js', plugins_url().'/crm-last-posts-widget/js/crm-lastposts.js');
+	
+	wp_enqueue_script('cpa_custom_jsUI', 'http://code.jquery.com/ui/1.10.4/jquery-ui.js');
 }
 add_action('admin_enqueue_scripts', 'crm_js');
 
@@ -283,7 +288,18 @@ class crm_lastposts extends WP_Widget {
             </div>
             <div class="crmCustomContainer NumPostTitleContainer">
             	<p><input type="text" id="<?php echo $this->get_field_id( 'crm_title_color' ); ?>" name="<?php echo $this->get_field_name( 'crm_title_color' );?>" value="<?php echo $crm_title_color; ?>" class="crm-color-picker" ></p>
-            	<p><input class="widefat crmSizer" id="<?php echo $this->get_field_id( 'crm_title_size' ); ?>" name="<?php echo $this->get_field_name( 'crm_title_size' ); ?>" type="text" value="<?php echo esc_attr( $crm_title_size ); ?>" /> <?php _e('Size (px)', 'crm-lastposts'); ?></p>
+            	                
+                <div class="crmCustomTitlesLeft" style="margin-top:4px;">
+                	<div class="slButtonTitle"></div>
+                </div>
+                <div class="crmCustomTitlesRight">
+                	<p><input class="widefat crmSizer slTitle" id="<?php echo $this->get_field_id( 'crm_title_size' ); ?>" name="<?php echo $this->get_field_name( 'crm_title_size' ); ?>" type="text" value="<?php echo esc_attr( $crm_title_size ); ?>" /> <?php _e('Size (px)', 'crm-lastposts'); ?></p>
+                </div>
+                
+               	<script type='text/javascript'>
+       				var slTitleValue = <?php echo esc_attr( $crm_title_size ); ?>;
+        		</script>
+
             </div>
             
             <div class="crmCustomTitlesLeft">
@@ -294,7 +310,18 @@ class crm_lastposts extends WP_Widget {
             </div>
             <div class="crmCustomContainer NumPostDateContainer">
             	<p><input type="color" id="<?php echo $this->get_field_id( 'crm_date_color' ); ?>" name="<?php echo $this->get_field_name( 'crm_date_color' );?>" value="<?php echo $crm_date_color; ?>" class="crm-color-picker"></p>
-            	<p><input class="widefat crmSizer" id="<?php echo $this->get_field_id( 'crm_date_size' ); ?>" name="<?php echo $this->get_field_name( 'crm_date_size' ); ?>" type="text" value="<?php echo esc_attr( $crm_date_size ); ?>" /> <?php _e('Size (px)', 'crm-lastposts'); ?></p>
+            
+            	<div class="crmCustomTitlesLeft" style="margin-top:4px;">
+                	<div class="slButtonDate"></div>
+                </div>
+                <div class="crmCustomTitlesRight">
+                	<p><input class="widefat crmSizer slDate" id="<?php echo $this->get_field_id( 'crm_date_size' ); ?>" name="<?php echo $this->get_field_name( 'crm_date_size' ); ?>" type="text" value="<?php echo esc_attr( $crm_date_size ); ?>" /> <?php _e('Size (px)', 'crm-lastposts'); ?></p>
+                </div>
+                
+                <script type='text/javascript'>
+       				var slDateValue = <?php echo esc_attr( $crm_date_size ); ?>;
+        		</script>
+                
             </div>
             
             <div class="crmCustomTitlesLeft">
@@ -305,7 +332,18 @@ class crm_lastposts extends WP_Widget {
             </div>
             <div class="crmCustomContainer NumColorCheckContainer">
             	<p><input type="color" id="<?php echo $this->get_field_id( 'crm_posts_color' ); ?>" name="<?php echo $this->get_field_name( 'crm_posts_color' );?>" value="<?php echo $crm_posts_color; ?>" class="crm-color-picker"></p>
-            	<p><input class="widefat crmSizer" id="<?php echo $this->get_field_id( 'crm_posts_size' ); ?>" name="<?php echo $this->get_field_name( 'crm_posts_size' ); ?>" type="text" value="<?php echo esc_attr( $crm_posts_size ); ?>" /> <?php _e('Size (px)', 'crm-lastposts'); ?></p>
+            
+            	<div class="crmCustomTitlesLeft" style="margin-top:4px;">
+                	<div class="slButtonComments"></div>
+                </div>
+                <div class="crmCustomTitlesRight">
+                	<p><input class="widefat crmSizer slComments" id="<?php echo $this->get_field_id( 'crm_posts_size' ); ?>" name="<?php echo $this->get_field_name( 'crm_posts_size' ); ?>" type="text" value="<?php echo esc_attr( $crm_posts_size ); ?>" /> <?php _e('Size (px)', 'crm-lastposts'); ?></p>
+                </div>
+                
+                <script type='text/javascript'>
+       				var slCommentsValue = <?php echo esc_attr( $crm_posts_size ); ?>;
+        		</script>
+            
             </div>
             
             
@@ -317,7 +355,18 @@ class crm_lastposts extends WP_Widget {
             </div>
             <div class="crmCustomContainer boxCheckContainer">
             	<p><input type="color" id="<?php echo $this->get_field_id( 'crm_cont_color' ); ?>" name="<?php echo $this->get_field_name( 'crm_cont_color' );?>" value="<?php echo $crm_cont_color; ?>" class="crm-color-picker"></p>
-            	<p><input class="widefat crmSizer" id="<?php echo $this->get_field_id( 'crm_cont_opac' ); ?>" name="<?php echo $this->get_field_name( 'crm_cont_opac' ); ?>" type="text" value="<?php echo esc_attr( $crm_cont_opac ); ?>" /> <?php _e('Opacity (0 to 1)', 'crm-lastposts'); ?></p>
+            	
+                <div class="crmCustomTitlesLeft" style="margin-top:4px;">
+                	<div class="slButtonBoxOpacity"></div>
+                </div>
+                <div class="crmCustomTitlesRight">
+               		<p><input class="widefat crmSizer slBoxOpacity" id="<?php echo $this->get_field_id( 'crm_cont_opac' ); ?>" name="<?php echo $this->get_field_name( 'crm_cont_opac' ); ?>" type="text" value="<?php echo esc_attr( $crm_cont_opac ); ?>" /> <?php _e('Opacity', 'crm-lastposts'); ?></p>
+                </div>
+            
+            	<script type='text/javascript'>
+       				var slOpacityValue = <?php echo esc_attr( $crm_cont_opac ); ?>;
+        		</script>
+            
             </div> 
             
             </div>
