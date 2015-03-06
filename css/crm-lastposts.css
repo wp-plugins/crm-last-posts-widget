@@ -1,0 +1,333 @@
+/* Estilos Cromorama LastPosts */
+/* Versión 1.4.5 - 12|02|2015 */
+
+/* ADMIN LAYOUT */
+
+.adminDoubleContainer{
+	overflow:auto;
+}
+
+.marginKill{
+	margin:0;
+}
+
+.leftSide{
+	float:left;
+	width:49%;
+	margin:0;
+}
+
+.rightSide{
+	float:right;
+	width:49%;
+	margin:0;
+}
+
+.marginBottomEnd{
+	margin-bottom:10px;
+}
+
+.relativePar{
+	position:relative;
+}
+
+.crmCustomTopsText{
+	margin-bottom:0;
+}
+
+/* EFFECTS CONTAINER */
+
+	/* WHITE OPACITY */
+
+	.postContainerOpacity{
+		position:relative;
+		margin-top: 10px;
+		background:#FFF;
+	}
+	
+	/* BLACK OPACITY */
+
+	.postContainerOpacityBlack{
+		position:relative;
+		margin-top: 10px;
+		background:#000;
+	}
+
+	/* IMAGE GROW */
+
+	.postContainerGrow{
+		position:relative;
+		margin-top: 10px;
+		overflow:hidden;
+	}
+
+	/* IMAGE SHRINK */
+
+	.postContainerShrink{
+		position:relative;
+		margin-top: 10px;
+		overflow:hidden;
+	}
+	
+	/* IMAGE BLUR */
+	
+	.postContainerRotateText{
+		position:relative;
+		margin-top: 10px;
+		overflow:hidden;	
+	}
+
+/* IMAGES AND EFFECTS */
+
+	/* WHITE OPACITY */
+
+	.postContainerOpacity img {
+		opacity:1;
+		transition:opacity 0.2s ;
+	}
+	
+	.postContainerOpacity:hover img{
+		opacity:0.3;
+		filter:alpha(opacity=40); /* For IE8 and earlier */
+		transition:opacity 0.2s ;
+	}
+
+	/* BLACK OPACITY */
+
+	.postContainerOpacityBlack img {
+		opacity: 1;
+		transition: opacity .25s ease-in-out;
+		-moz-transition: opacity .25s ease-in-out;
+		-webkit-transition: opacity .25s ease-in-out;
+	}
+	
+	.postContainerOpacityBlack:hover img{
+		opacity:0.3;
+	}
+
+	/* IMAGE GROW */
+
+	.postContainerGrow img{
+		-webkit-transition:-webkit-transform 0.5s ease-out;
+		-moz-transition:-moz-transform 0.5s ease-out;
+		-o-transition:-o-transform 0.5s ease-out;
+		-ms-transition:-ms-transform 0.5s ease-out;
+		transition:transform 0.5s ease-out;
+	}
+	
+	.postContainerGrow:hover img{
+		-webkit-transform: scale(1.2);
+		-moz-transform: scale(1.2);
+		-o-transform: scale(1.2);
+		-ms-transform: scale(1.2);
+		transform: scale(1.2);
+	}
+
+	/* IMAGE SHRINK */
+
+	.postContainerShrink img {
+		-webkit-transition: all 1s ease;
+		-moz-transition: all 1s ease;
+		-o-transition: all 1s ease;
+		-ms-transition: all 1s ease;
+		transition: all 1s ease;
+		
+		-webkit-transform: scale(1.2);
+		-moz-transform: scale(1.2);
+		-o-transform: scale(1.2);
+		-ms-transform: scale(1.2);
+		transform: scale(1.2);
+	}
+	 
+	.postContainerShrink:hover img {
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-o-transform: scale(1);
+		-ms-transform: scale(1);
+		transform: scale(1);
+	}
+
+	/* IMAGE BLUR */
+	
+	.postContainerRotateText img {
+	   -webkit-transition: all 0.4s ease-in-out 0.2s;
+	   -moz-transition: all 0.4s ease-in-out 0.2s;
+	   -o-transition: all 0.4s ease-in-out 0.2s;
+	   -ms-transition: all 0.4s ease-in-out 0.2s;
+	   transition: all 0.4s ease-in-out 0.2s;
+	   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	   filter: alpha(opacity=100);
+	   opacity: 1;
+	}
+	
+	.postContainerRotateText:hover img {
+	   -webkit-transform: scale(0);
+	   -moz-transform: scale(0);
+	   -o-transform: scale(0);
+	   -ms-transform: scale(0);
+	   transform: scale(0);
+	   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	   filter: alpha(opacity=0);
+	   opacity: 0;
+	   -webkit-transition-delay: 0s;
+	   -moz-transition-delay: 0s;
+	   -o-transition-delay: 0s;
+	   -ms-transition-delay: 0s;
+	   transition-delay: 0s;
+	}
+
+/* EFFECTS MASKS */
+
+	/* ROTATE TEXT MASK */
+
+	.postContainerRotateTextMask{
+		background-color: rgba(0,0,0,0.8);
+		-ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+		filter: alpha(opacity=0);
+		opacity: 0;
+		-webkit-transform: scale(0) rotate(-180deg);
+		-moz-transform: scale(0) rotate(-180deg);
+		-o-transform: scale(0) rotate(-180deg);
+		-ms-transform: scale(0) rotate(-180deg);
+		transform: scale(0) rotate(-180deg);
+		-webkit-transition: all 0.4s ease-in;
+		-moz-transition: all 0.4s ease-in;
+		-o-transition: all 0.4s ease-in;
+		-ms-transition: all 0.4s ease-in;
+		transition: all 0.4s ease-in;
+		-webkit-border-radius: 0px;
+		-moz-border-radius: 0px;
+		border-radius: 0px;
+	}
+	
+	.postContainerRotateText:hover .postContainerRotateTextMask {
+	   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	   filter: alpha(opacity=100);
+	   opacity: 1;
+	   -webkit-transform: scale(1) rotate(0deg);
+	   -moz-transform: scale(1) rotate(0deg);
+	   -o-transform: scale(1) rotate(0deg);
+	   -ms-transform: scale(1) rotate(0deg);
+	   transform: scale(1) rotate(0deg);
+	   -webkit-transition-delay: 0.2s;
+	   -moz-transition-delay: 0.2s;
+	   -o-transition-delay: 0.2s;
+	   -ms-transition-delay: 0.2s;
+	   transition-delay: 0.2s;
+	}
+
+.crmCustomContainer{
+	background-color:#E8E8E8;
+	padding:10px;
+	border:1px solid #D4D4D4;
+	overflow: auto;
+}
+
+.crmCustomContainer p{
+	margin:0;
+}
+
+.crmCustomTitlesLeft{
+	width:50%;
+	float:left;
+}
+
+.crmCustomTitlesRight{
+	width:50%;
+	float:left;
+	text-align:right;
+}
+
+.crmCustomTitlesRightSizer{
+	width:50%;
+	float:left;
+	text-align:left;
+}
+
+.crmCustomTitlesRightSizer p{
+	padding-left:20px;
+}
+
+.crmSizer{
+	width:64px;
+    font-size: 12px;
+    height: 20px;
+    margin-left: 1px;
+    text-align: right;
+}
+
+.crmSeparator{
+	height:20px;
+}
+
+/* TEXTS */
+
+.defaultBox{
+	background: rgba(0, 0, 0, 0.4);
+	width:70%;
+	padding:5px;
+	margin: 0 auto;
+}
+
+.defaultTitle{
+	margin:0;
+	margin-bottom:5px;
+}
+
+.defaultDate{
+	color:#FFF;
+	margin:0 !important;
+}
+
+.defaultNum{
+	color:#FFF;
+	margin:5px 0 0 !important;
+}
+
+.text {
+	visibility:hidden;
+	position:absolute;
+	text-align:center;
+	height:0;
+	width:0;
+}
+
+.nuevoClass {
+	font-size: 1.3vw;
+	font-size: 1vmax;
+	line-height: 1em;
+	visibility: visible;
+	text-align: center;
+	width: 100%;
+	
+	margin: 0;
+    padding: 0;
+		
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+/* UI SLIDE BUTTOS */
+
+.slButtonTitle .ui-widget-header{
+	background:#BDBDBD;
+}
+
+.slButtonDate .ui-widget-header{
+	background:#BDBDBD;
+}
+
+.slButtonComments .ui-widget-header{
+	background:#BDBDBD;
+}
+
+.slButtonBoxOpacity .ui-widget-header{
+	background:#BDBDBD;
+}
+
+.slButtonBoxRadious .ui-widget-header{
+	background:#BDBDBD;
+}

@@ -1,0 +1,176 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CRM LastPost Widget 1.4.0\n"
+"POT-Creation-Date: 2015-03-06 11:42+0100\n"
+"PO-Revision-Date: 2015-03-06 11:43+0100\n"
+"Last-Translator: Cromorama.com <apps@cromorama.com>\n"
+"Language-Team: Cromorama.com <apps@cromorama.com>\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: crm-lastposts.php:44
+msgid "CRM LastPosts Widget"
+msgstr "CRM LastPosts Widget"
+
+#: crm-lastposts.php:46
+msgid ""
+"Shows the last, most popular or random posts of any category you choose "
+"using a selected thumbnail image and different effects."
+msgstr ""
+"Prikazuje poslednji, najpopularniji ili nasumičan post bilo koje kategorije "
+"koju odaberete, uz pomoć odabrane sličice i različitih efekata."
+
+#: crm-lastposts.php:169 crm-lastposts.php:203
+msgid "Title"
+msgstr "Naslov"
+
+#: crm-lastposts.php:170
+msgid "nposts"
+msgstr "npostovi"
+
+#: crm-lastposts.php:171
+msgid "all"
+msgstr "svi"
+
+#: crm-lastposts.php:172
+msgid "date"
+msgstr "datum"
+
+#: crm-lastposts.php:210
+msgid "Category to show"
+msgstr "Kategorija za prikazivanje"
+
+#: crm-lastposts.php:213
+msgid "All Categories"
+msgstr "Sve kategorije"
+
+#: crm-lastposts.php:224
+msgid "Posts Number"
+msgstr "Broj postova"
+
+#: crm-lastposts.php:231
+msgid "Order By"
+msgstr "Redosled po"
+
+#: crm-lastposts.php:239
+msgid "Date"
+msgstr "Datumu"
+
+#: crm-lastposts.php:240
+msgid "Most Popular"
+msgstr "Najpopularnijem"
+
+#: crm-lastposts.php:241
+msgid "Random"
+msgstr "Nasumičan"
+
+#: crm-lastposts.php:248
+msgid "ASC"
+msgstr "RASTUĆI"
+
+#: crm-lastposts.php:249
+msgid "DESC"
+msgstr "OPADAJUĆI"
+
+#: crm-lastposts.php:257
+msgid "Effect"
+msgstr "Efekat"
+
+#: crm-lastposts.php:260
+msgid "White Opacity"
+msgstr "Bela neprozirnost"
+
+#: crm-lastposts.php:261
+msgid "Black Opacity"
+msgstr "Crna neprozirnost"
+
+#: crm-lastposts.php:262
+msgid "Image Grow"
+msgstr "Slika raste"
+
+#: crm-lastposts.php:263
+msgid "Image Shrink"
+msgstr "Slika se smanjuje"
+
+#: crm-lastposts.php:264
+msgid "Rotate Text"
+msgstr "Rotate Text"
+
+#: crm-lastposts.php:272
+msgid "Thumbnail"
+msgstr "Sličica"
+
+#: crm-lastposts.php:282
+msgid "Customization Options"
+msgstr "Customization Options"
+
+#: crm-lastposts.php:286
+msgid "Post Title"
+msgstr "Post Title"
+
+#: crm-lastposts.php:289 crm-lastposts.php:311 crm-lastposts.php:333
+#: crm-lastposts.php:356
+msgid "Check to activate"
+msgstr "Check to activate"
+
+#: crm-lastposts.php:298 crm-lastposts.php:320 crm-lastposts.php:342
+msgid "Size (px)"
+msgstr "Size (px)"
+
+#: crm-lastposts.php:308
+msgid "Post Date"
+msgstr "Post Date"
+
+#: crm-lastposts.php:330
+msgid "Posts Num Color"
+msgstr "Posts Num Color"
+
+#: crm-lastposts.php:353
+msgid "Box"
+msgstr "Box"
+
+#: crm-lastposts.php:365
+msgid "Opacity"
+msgstr "Opacity"
+
+#: crm-lastposts.php:376
+msgid "Border Radious"
+msgstr "Border Radious"
+
+#~ msgid "Opacity (0 to 1)"
+#~ msgstr "Opacity (0 to 1)"
+
+#~ msgid "Color"
+#~ msgstr "Color"
+
+#~ msgid "Activate Text Container"
+#~ msgstr "Aktiviraj kontejner sa tekstom"
+
+#~ msgid "Post Text Container CSS Class"
+#~ msgstr "CSS klasa kontejnera teksta posta"
+
+#~ msgid "Post Title CSS Class"
+#~ msgstr "CSS klasa naslova posta"
+
+#~ msgid "Post Date CSS Class"
+#~ msgstr "CSS klasa datuma posta"
+
+#~ msgid "asc"
+#~ msgstr "asc"
+
+#~ msgid "medium"
+#~ msgstr "medium"
+
+#~ msgid "defaultTitle"
+#~ msgstr "defaultTitle"
+
+#~ msgid "defaultDate"
+#~ msgstr "defaultDate"
