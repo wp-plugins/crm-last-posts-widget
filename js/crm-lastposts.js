@@ -65,7 +65,7 @@ function runChecks(){
 
 
 function sliderButtons(){
-
+	
 	jQuery('.slButtonTitle').slider({
 		range: "min",
     	orientation:'horizontal',
@@ -108,6 +108,17 @@ function sliderButtons(){
         value:slOpacityValue,
         slide: function( event, ui ) {
         	jQuery('.slBoxOpacity').val( ui.value );
+        }	
+	});
+
+	jQuery('.slButtonBoxRadious').slider({
+		range: "min",
+    	orientation:'horizontal',
+        min: 1,
+        max: 50,
+        value:slRadiousValue,
+        slide: function( event, ui ) {
+        	jQuery('.slBoxRadious').val( ui.value );
         }	
 	});
 

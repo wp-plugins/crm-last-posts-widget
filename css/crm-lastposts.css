@@ -238,6 +238,16 @@
 	text-align:right;
 }
 
+.crmCustomTitlesRightSizer{
+	width:50%;
+	float:left;
+	text-align:left;
+}
+
+.crmCustomTitlesRightSizer p{
+	padding-left:20px;
+}
+
 .crmSizer{
 	width:64px;
     font-size: 12px;
@@ -257,10 +267,6 @@
 	width:70%;
 	padding:5px;
 	margin: 0 auto;
-
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border-radius: 2px;
 }
 
 .defaultTitle{
@@ -302,4 +308,26 @@
 	-webkit-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
+}
+
+/* UI SLIDE BUTTOS */
+
+.slButtonTitle .ui-widget-header{
+	background:#BDBDBD;
+}
+
+.slButtonDate .ui-widget-header{
+	background:#BDBDBD;
+}
+
+.slButtonComments .ui-widget-header{
+	background:#BDBDBD;
+}
+
+.slButtonBoxOpacity .ui-widget-header{
+	background:#BDBDBD;
+}
+
+.slButtonBoxRadious .ui-widget-header{
+	background:#BDBDBD;
 }

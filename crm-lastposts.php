@@ -4,7 +4,7 @@
 Plugin Name: CRM LastPosts Widget
 Plugin URI: http://www.cromorama.com/blog/crm-lastposts-widget
 Description: Shows the last, most popular or random posts of any category you choose using a selected thumbnail image and different effects.
-Version: 1.4.10
+Version: 1.4.11
 Author: Cromorama.com
 Author URI: http://www.cromorama.com
 */
@@ -69,6 +69,7 @@ class crm_lastposts extends WP_Widget {
 		$crm_date_size = $instance['crm_date_size'];
 		$crm_posts_size = $instance['crm_posts_size'];
 		$crm_cont_opac = $instance['crm_cont_opac'];
+		$crm_cont_radious = $instance['crm_cont_radious'];
 		
 		echo $args['before_widget'];
 		
@@ -104,7 +105,7 @@ class crm_lastposts extends WP_Widget {
 <?php
                                             if($crm_text_container_class_activate == 1){
 ?>
-                                                <div id="" style="background:<?php echo hex2rgb($crm_cont_color, $crm_cont_opac); ?>;" class="defaultBox">
+                                                <div id="" style="background:<?php echo hex2rgb($crm_cont_color, $crm_cont_opac) ?>;-webkit-border-radius: <?php echo $crm_cont_radious; ?>px;-moz-border-radius: <?php echo $crm_cont_radious; ?>px;border-radius: <?php echo $crm_cont_radious; ?>px;" class="defaultBox">
 <?php
                                             }
 													if($crm_post_title_activate == 1){
@@ -184,6 +185,7 @@ class crm_lastposts extends WP_Widget {
 		if (isset($instance['crm_date_size'])){ $crm_date_size = $instance['crm_date_size']; }else{ $crm_date_size = "16"; }
 		if (isset($instance['crm_posts_size'])){ $crm_posts_size = $instance['crm_posts_size']; }else{ $crm_posts_size = "18"; }
 		if (isset($instance['crm_cont_opac'])){ $crm_cont_opac = $instance['crm_cont_opac']; }else{ $crm_cont_opac = "0.6"; }
+		if (isset($instance['crm_cont_radious'])){ $crm_cont_radious = $instance['crm_cont_radious']; }else{ $crm_cont_radious = "5"; }
 		
 		//Recuperacion de Categorias
 		$cat_args = array(
@@ -292,8 +294,8 @@ class crm_lastposts extends WP_Widget {
                 <div class="crmCustomTitlesLeft" style="margin-top:4px;">
                 	<div class="slButtonTitle"></div>
                 </div>
-                <div class="crmCustomTitlesRight">
-                	<p><input class="widefat crmSizer slTitle" id="<?php echo $this->get_field_id( 'crm_title_size' ); ?>" name="<?php echo $this->get_field_name( 'crm_title_size' ); ?>" type="text" value="<?php echo esc_attr( $crm_title_size ); ?>" /> <?php _e('Size (px)', 'crm-lastposts'); ?></p>
+                <div class="crmCustomTitlesRightSizer">
+                	<p style="crmSizerContent"><input class="widefat crmSizer slTitle" id="<?php echo $this->get_field_id( 'crm_title_size' ); ?>" name="<?php echo $this->get_field_name( 'crm_title_size' ); ?>" type="text" value="<?php echo esc_attr( $crm_title_size ); ?>" /> <?php _e('Size (px)', 'crm-lastposts'); ?></p>
                 </div>
                 
                	<script type='text/javascript'>
@@ -314,7 +316,7 @@ class crm_lastposts extends WP_Widget {
             	<div class="crmCustomTitlesLeft" style="margin-top:4px;">
                 	<div class="slButtonDate"></div>
                 </div>
-                <div class="crmCustomTitlesRight">
+                <div class="crmCustomTitlesRightSizer">
                 	<p><input class="widefat crmSizer slDate" id="<?php echo $this->get_field_id( 'crm_date_size' ); ?>" name="<?php echo $this->get_field_name( 'crm_date_size' ); ?>" type="text" value="<?php echo esc_attr( $crm_date_size ); ?>" /> <?php _e('Size (px)', 'crm-lastposts'); ?></p>
                 </div>
                 
@@ -336,7 +338,7 @@ class crm_lastposts extends WP_Widget {
             	<div class="crmCustomTitlesLeft" style="margin-top:4px;">
                 	<div class="slButtonComments"></div>
                 </div>
-                <div class="crmCustomTitlesRight">
+                <div class="crmCustomTitlesRightSizer">
                 	<p><input class="widefat crmSizer slComments" id="<?php echo $this->get_field_id( 'crm_posts_size' ); ?>" name="<?php echo $this->get_field_name( 'crm_posts_size' ); ?>" type="text" value="<?php echo esc_attr( $crm_posts_size ); ?>" /> <?php _e('Size (px)', 'crm-lastposts'); ?></p>
                 </div>
                 
@@ -359,12 +361,23 @@ class crm_lastposts extends WP_Widget {
                 <div class="crmCustomTitlesLeft" style="margin-top:4px;">
                 	<div class="slButtonBoxOpacity"></div>
                 </div>
-                <div class="crmCustomTitlesRight">
+                <div class="crmCustomTitlesRightSizer">
                		<p><input class="widefat crmSizer slBoxOpacity" id="<?php echo $this->get_field_id( 'crm_cont_opac' ); ?>" name="<?php echo $this->get_field_name( 'crm_cont_opac' ); ?>" type="text" value="<?php echo esc_attr( $crm_cont_opac ); ?>" /> <?php _e('Opacity', 'crm-lastposts'); ?></p>
                 </div>
             
             	<script type='text/javascript'>
        				var slOpacityValue = <?php echo esc_attr( $crm_cont_opac ); ?>;
+        		</script>
+
+                <div class="crmCustomTitlesLeft" style="margin-top:4px;">
+                	<div class="slButtonBoxRadious"></div>
+                </div>
+                <div class="crmCustomTitlesRightSizer">
+               		<p><input class="widefat crmSizer slBoxRadious" id="<?php echo $this->get_field_id( 'crm_cont_radious' ); ?>" name="<?php echo $this->get_field_name( 'crm_cont_radious' ); ?>" type="text" value="<?php echo esc_attr( $crm_cont_radious ); ?>" /> <?php _e('Border Radious', 'crm-lastposts'); ?></p>
+                </div>
+            
+            	<script type='text/javascript'>
+       				var slRadiousValue = <?php echo esc_attr( $crm_cont_radious ); ?>;
         		</script>
             
             </div> 
@@ -396,6 +409,7 @@ class crm_lastposts extends WP_Widget {
 			$instance['crm_date_size'] = ( ! empty( $new_instance['crm_date_size'] ) ) ? strip_tags( $new_instance['crm_date_size'] ) : '';
 			$instance['crm_posts_size'] = ( ! empty( $new_instance['crm_posts_size'] ) ) ? strip_tags( $new_instance['crm_posts_size'] ) : '';
 			$instance['crm_cont_opac'] = ( ! empty( $new_instance['crm_cont_opac'] ) ) ? strip_tags( $new_instance['crm_cont_opac'] ) : '';
+			$instance['crm_cont_radious'] = ( ! empty( $new_instance['crm_cont_radious'] ) ) ? strip_tags( $new_instance['crm_cont_radious'] ) : '';
 		return $instance;
 	
 	}
